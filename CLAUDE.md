@@ -1,174 +1,171 @@
-# Knowledge Base Schema
+# LLM Wiki - Claude Code Schema
 
-## Your Role
-You are the librarian and author of this knowledge base focused on Generative AI.
-You read raw source material and compile it into structured, interlinked wiki articles.
-You never make things up - every claim traces to a file in raw/.
+This is an LLM-implemented personal knowledge base following Andrej Karpathy's LLM Wiki pattern.
 
-## Directories
-- raw/: Source documents. Append-only. Never edit after adding.
-- wiki/: LLM-authored articles organized by source.
-- wiki/index.md: Master index. Always keep updated.
-- wiki/graph.json: Context graph of all articles, tags, and relationships. Always keep updated.
-- wiki/<source-slug>/: Folder per source containing summary.md and all concept articles.
-- changelog.md: Log every run.
+## Overview
 
-## Wiki Folder Structure
-Each ingested source gets its own folder inside wiki/. The folder name is derived from
-the raw file slug (without the date prefix). Inside the folder:
-- summary.md: Source summary written at the configured depth level
-- concept-name.md: Individual wiki articles for each key concept
+This is a three-layer architecture:
+- **raw/** - Immutable source documents (never modified by Claude)
+- **wiki/** - LLM-maintained structured markdown wiki (Claude owns this layer)
+- **CLAUDE.md** - This file: defines conventions and workflows
 
-Example:
+This wiki is for:
+- Machine learning research
+- Competitive analysis
+- Book notes
+- General knowledge accumulation
+
+## Directory Structure
+
 ```
+raw/
+├── articles/    # Web articles, blog posts, research papers
+├── books/       # Book chapters, complete books
+├── reports/     # Competitive analysis, industry reports
+└── assets/      # Images, attachments (downloaded locally for Obsidian)
+
 wiki/
-├── index.md
-├── ietf-draft-narajala-ans/
-│   ├── summary.md
-│   ├── agent-name-service.md
-│   ├── agent-discovery.md
-│   └── agent-identity-and-trust.md
-└── naur-programming-as-theory-building/
-    ├── summary.md
-    ├── programming-as-theory-building.md
-    └── tacit-knowledge-in-software.md
+├── overview.md            # Home page - overall overview and synthesis
+├── index.md               # Content-oriented catalog of all pages
+├── log.md                 # Append-only chronological log of all changes
+├── sources/               # Summaries of raw sources (one source = one page)
+├── concepts/              # Concept/topic pages (ideas, techniques, theories)
+├── entities/              # Entity pages (authors, companies, products, people)
+└── queries/               # Saved query responses and analyses
 ```
 
-## Article Format
-Each wiki article must follow this format:
+## Page Format Conventions
+
+### YAML Frontmatter
+
+Every wiki page **must** start with YAML frontmatter compatible with Obsidian Dataview:
+
+```yaml
+---
+title: Page Title
+date: YYYY-MM-DD
+last_updated: YYYY-MM-DD
+tags: [category, subtag]
+sources: [["path/to/source", "Source Name"], ...]
+---
+```
+
+Fields:
+- `title`: Display title of the page
+- `date`: Creation date
+- `last_updated`: Last modification date (update on every edit)
+- `tags`: List of tags for categorization. Use hierarchical tags (e.g., `ml/transformer`, `competitor/openai`)
+- `sources`: List of `[link, name]` pairs for sources that informed this page
+
+### Internal Links
+
+Use Obsidian format `[[wiki/concepts/page-name]]` for internal links. Short form works: `[[concepts/page-name]]`.
+
+### Citations
+
+Always cite original sources. When referencing information from a raw source, link to the corresponding `[[sources/xxx]]` wiki page which links back to the original raw document.
+
+## Workflows
+
+### 1. Ingest Workflow (when adding a new raw source)
+
+When the user asks to ingest a new source located at `raw/path/to/file.md`:
+
+1. **Read** - Read the entire source document
+2. **Discuss** - Summarize the key takeaways and main points for the user. Ask for guidance on what to emphasize.
+3. **Create Source Summary** - Create/update `wiki/sources/[source-name-slug].md` with:
+   - Summary of the source
+   - Key points and conclusions
+   - Citation back to the raw file
+4. **Extract Concepts** - Identify all key concepts mentioned. For each concept:
+   - If page doesn't exist: create `wiki/concepts/[concept-slug].md` with definition/explanation
+   - If page exists: update it with new information from this source, note if new information contradicts existing claims
+5. **Extract Entities** - Identify all key entities (authors, companies, products, people):
+   - If page doesn't exist: create `wiki/entities/[entity-slug].md`
+   - If page exists: update it with new information
+6. **Update Index** - Add new pages to `wiki/index.md` organized by category
+7. **Log Entry** - Append an entry to `wiki/log.md` with format:
+   ```
+   ## [YYYY-MM-DD] ingest | Source Name
+   - Created: 1 source summary, 3 concepts, 2 entities
+   - Updated: 1 existing concept
+   - Raw source: `raw/path/to/file.md`
+   ```
+8. **Update Overview** - Update `wiki/overview.md` if the new source changes the overall synthesis.
+
+A single source may touch 5-15 wiki pages. This is expected and desired - knowledge gets integrated, not just indexed.
+
+### 2. Query Workflow (when user asks a question)
+
+1. **Locate** - Read `wiki/index.md` to identify relevant pages
+2. **Read** - Read all relevant wiki pages
+3. **Synthesize** - Answer the question, citing wiki pages (and through them, original sources)
+4. **Preserve** - If the answer is a valuable, enduring synthesis or analysis that future queries might benefit from, save it as `wiki/queries/[query-slug].md` and update index and log. Don't save trivial conversational answers.
+
+### 3. Lint Workflow (periodic wiki health check)
+
+When user asks for a lint/health check:
+
+1. **Scan** all wiki pages
+2. **Check for**:
+   - Contradictions between pages
+   - Stale claims that newer sources contradict
+   - Orphan pages with no inbound links
+   - Concepts mentioned but not yet having their own page
+   - Missing cross-references
+   - Broken internal links
+3. **Report** findings to user with specific file paths
+4. **Fix** any issues user approves fixing
+5. **Suggest** new questions to explore and gaps to fill
+
+## Index Format
+
+`wiki/index.md` is organized by category:
 
 ```markdown
----
-title: <Concept Name>
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-sources: [raw/filename.md, ...]
-related: [other-article](other-article.md), [another-article](another-article.md)
-tags: [concept-specific-tag, broader-topic-tag, genai-category-tag]
----
-
-# <Concept Name>
-
-<Encyclopedia-style summary, 200-500 words>
-
-## Key Points
-- ...
-
-## Related Concepts
-- [linked article](linked-article.md) - brief note on relationship
+# Index
 
 ## Sources
-- raw/filename.md - what this source contributed
+
+- [[sources/source-name | Source Name]] - One-line description of the source
+
+## Concepts
+
+- [[concepts/concept-name | Concept Name]] - Brief definition
+
+## Entities
+
+- [[entities/entity-name | Entity Name]] - Brief description
+
+## Queries
+
+- [[queries/query-name | Query Title]] - Brief description
 ```
 
-### Tags
-Every article must have a `tags` field in frontmatter with 3-7 lowercase-kebab-case tags:
-1. **Content-specific tags**: what this article covers (e.g., `pki`, `dns`, `tacit-knowledge`)
-2. **Broader topic tags**: the larger area it belongs to (e.g., `ai-agents`, `software-engineering-philosophy`)
-Reuse existing tags across articles to build a coherent taxonomy.
+Keep this updated on every ingest.
 
-## Source Summary Format
-For each raw source ingested, create a summary.md inside the source's folder. The
-summary depth is controlled by a config setting (100/300/500 level). Read the depth
-preference from `.claude/skills/add/config.json`.
+## Log Format
 
-Naming: `wiki/<source-slug>/summary-<source-slug>.md`
-The summary file includes the folder name so it remains identifiable even if downloaded standalone.
-
-### Depth Levels
-- **100** - Explain like I'm 12 (Feynman technique, analogies, 300-600 words)
-- **300** - College level (technical but accessible, 500-800 words)
-- **500** - Expert deep-dive (full technical detail, 800-1200 words)
-
-### ASCII Diagrams (required in every summary)
-Every source summary must include at least one ASCII diagram, regardless of depth level.
-Choose the most appropriate type(s):
-- **Sequence diagram**: for protocols, request/response flows, multi-step interactions
-- **Architecture/block diagram**: for system components, layers, data flow
-- **Flowchart**: for decision logic, algorithms, processes
-Keep diagrams under 70 characters wide. Use them to reinforce the text, not replace it.
+`wiki/log.md` is append-only. Each entry:
 
 ```markdown
----
-title: "Source Summary: <Source Title>"
-created: YYYY-MM-DD
-source: raw/filename.md
-depth: <100|300|500>
-articles_created: [article-one.md, article-two.md, ...]
----
+## [YYYY-MM-DD] action | Description
 
-# <Source Title> - Summary
-
-<Summary content written at the configured depth level>
-
-## What This Source Covers
-- <bullet summary of main topics>
-
-## Wiki Articles From This Source
-- [Article One](article-one.md) - one line description
-- [Article Two](article-two.md) - one line description
+- Details...
 ```
 
-## Context Graph
+Where `action` is one of: `ingest`, `update`, `query`, `lint`.
 
-The file `wiki/graph.json` maintains a knowledge graph of all articles. It is updated
-every time content is added or ingested. The `/query` skill reads it for tag-based
-search and relationship traversal.
+## Principles
 
-Schema:
-- **nodes**: each article and summary with id, title, file path, tags, source_folder, type
-- **edges**: relationships between nodes (type: `related` or `source`)
+- **raw is immutable**: Never modify or delete files in `raw/`. If a source needs to be replaced, add a new file.
+- **Claude does the bookkeeping**: All maintenance (updating cross-references, index, log, integrating new info) is automatic. User shouldn't have to do it.
+- **Compound accumulation**: Every ingest and every query should leave the wiki richer than before. Valuable output gets saved, not lost in chat.
+- **Obsidian compatibility**: All conventions follow Obsidian best practices (internal links, frontmatter, etc.)
+- **Git for version control**: The entire wiki is a git repo - we get version history for free.
 
-Node types: `article`, `summary`
-Edge types: `related` (between articles), `source` (article -> its folder's summary)
+## When in Doubt
 
-Always keep graph.json in sync with the actual wiki articles and their frontmatter.
-
-## Operations
-
-### 1. Ingest (compile new raw files into wiki)
-- Scan raw/ for files not yet processed (check changelog.md)
-- For each new file: create a source folder in wiki/<source-slug>/
-- Extract key concepts, check if wiki article exists in any source folder
-- If article exists: update and expand it, add new sources
-- If article doesn't exist: create new article inside the source folder
-- Create wiki/<source-slug>/summary-<source-slug>.md at the configured depth level
-- Update wiki/index.md with clickable links to articles
-- Update backlinks in related articles (use relative paths)
-- Log the run in changelog.md
-
-### 2. Query
-- Read wiki/index.md to find relevant articles
-- Navigate to specific articles
-- Synthesize answer with references to specific wiki files
-
-### 3. Lint / Health Check
-- Scan wiki/ for articles with missing backlinks
-- Identify concepts mentioned in articles that don't have their own article yet
-- Flag inconsistencies between articles
-- Suggest new articles that would strengthen the knowledge base
-
-## Naming Conventions
-- Source folders: wiki/<source-slug>/ (slug derived from raw filename without date prefix)
-- Wiki articles: wiki/<source-slug>/lowercase-kebab-case.md
-- Source summaries: wiki/<source-slug>/summary-<source-slug>.md
-- Raw files: YYYYMMDD-source-slug.md (e.g., 20260403-venturebeat-karpathy.md)
-- Use markdown links `[text](path.md)` for all cross-references so they are clickable
-- Concepts with multiple words get their own file if mentioned 3+ times
-
-## Topic Focus
-This knowledge base covers Generative AI, including:
-- LLM fundamentals (transformers, attention, tokenization)
-- Prompt engineering
-- Retrieval-Augmented Generation (RAG)
-- AI agents and agentic frameworks
-- Fine-tuning and training
-- Guardrails and responsible AI
-- Benchmarking and evaluation
-- GenAI applications and tools
-- Amazon Bedrock and cloud AI services
-
-## Tools for Ingestion
-- **trafilatura**: Use for web articles and blog posts (clean content extraction)
-- **markitdown**: Use for PDFs, DOCX, YouTube transcripts, and Wikipedia
-- Both tools do NOT download images - they preserve image URLs as markdown references
+- Follow Karpathy's original idea: the wiki should compound over time, with the LLM doing all the tedious maintenance work.
+- More cross-references are better than fewer.
+- Split concepts/entities into their own pages even if they're short - better to have many small pages than few large ones.

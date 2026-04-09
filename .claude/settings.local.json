@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" ls-files)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" status --short)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" log --oneline --all --graph)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show --stat HEAD)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" diff --cached --name-status)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show HEAD:wiki/index.md)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show HEAD:wiki/overview.md)",
+      "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show HEAD:CLAUDE.md)",
+      "Bash(git -C D:/github.io/base-knowledge status)",
+      "Bash(git -C D:/github.io/base-knowledge log --oneline -5)"
+    ]
+  }
+}
