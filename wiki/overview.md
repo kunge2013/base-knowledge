@@ -27,7 +27,12 @@ Currently the wiki includes:
   - [[concepts/routing|Routing]] - Dynamic conditional logic for adaptive agent behavior
   - [[concepts/context-engineering|Context Engineering]] - Systematic construction of complete information environments
   - Coverage of major frameworks: [[concepts/langchain|LangChain]], [[concepts/langgraph|LangGraph]], [[concepts/google-adk|Google ADK]], [[concepts/crew-ai|Crew AI]]
-- **LLM Wiki methodology**: Original Karpathy's idea on how to build an LLM-maintained knowledge base.
+- **LLM Wiki methodology**: Complete documentation of Andrej Karpathy's LLM Wiki pattern:
+  - [[concepts/llm-wiki|LLM Wiki]] - Core pattern overview and comparison with traditional RAG
+  - [[concepts/three-layer-architecture|Three-Layer Architecture - 三层架构]] - The three-layer separation (raw/ + wiki/ + Schema)
+  - [[concepts/idea-file|Idea File - 想法文件]] - The idea sharing concept for the AI agent era
+  - [[concepts/qmd|qmd - Quick Markdown Search]] - Local hybrid markdown search engine
+  - [[concepts/retrieval-augmented-generation-rag|Retrieval-Augmented Generation (RAG)]] - Traditional approach comparison
 
 ## How It Works
 

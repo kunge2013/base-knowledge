@@ -1,0 +1,79 @@
+{
+  "userName": "",
+  "enableBlocklist": true,
+  "blockedCommands": {
+    "unix": [
+      "rm -rf",
+      "chmod 777",
+      "chmod -R 777"
+    ],
+    "windows": [
+      "del /s /q",
+      "rd /s /q",
+      "rmdir /s /q",
+      "format",
+      "diskpart",
+      "Remove-Item -Recurse -Force",
+      "Remove-Item -Force -Recurse",
+      "Remove-Item -r -fo",
+      "Remove-Item -fo -r",
+      "Remove-Item -Recurse",
+      "Remove-Item -r",
+      "ri -Recurse",
+      "ri -r",
+      "ri -Force",
+      "ri -fo",
+      "rm -r -fo",
+      "rm -Recurse",
+      "rm -Force",
+      "del -Recurse",
+      "del -Force",
+      "erase -Recurse",
+      "erase -Force",
+      "rd -Recurse",
+      "rmdir -Recurse",
+      "Format-Volume",
+      "Clear-Disk",
+      "Initialize-Disk",
+      "Remove-Partition"
+    ]
+  },
+  "permissionMode": "yolo",
+  "model": "claude-sonnet-4-6",
+  "thinkingBudget": "off",
+  "enableAutoTitleGeneration": true,
+  "titleGenerationModel": "",
+  "show1MModel": false,
+  "enableChrome": false,
+  "enableBangBash": false,
+  "excludedTags": [],
+  "mediaFolder": "",
+  "systemPrompt": "",
+  "allowedExportPaths": [
+    "~/Desktop",
+    "~/Downloads"
+  ],
+  "persistentExternalContextPaths": [],
+  "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-Gj7XGwc1zmqWCpSObruYAWH0I0Gk0TlGUxF3liFeDGh8kKGx\nANTHROPIC_BASE_URL=https://www.fucheers.top\nANTHROPIC_MODEL=claude-sonnet-4-6\nmax_tokens=32768",
+  "envSnippets": [],
+  "customContextLimits": {},
+  "keyboardNavigation": {
+    "scrollUpKey": "w",
+    "scrollDownKey": "s",
+    "focusInputKey": "i"
+  },
+  "locale": "en",
+  "claudeCliPath": "",
+  "claudeCliPathsByHost": {
+    "DESKTOP-4ERJCJK": "D:\\npm\\prefix\\node_modules\\@anthropic-ai\\claude-code\\cli.js"
+  },
+  "loadUserClaudeSettings": true,
+  "lastClaudeModel": "haiku",
+  "lastCustomModel": "",
+  "lastEnvHash": "ANTHROPIC_BASE_URL=https://www.fucheers.top|ANTHROPIC_MODEL=claude-sonnet-4-6",
+  "maxTabs": 3,
+  "tabBarPosition": "input",
+  "enableAutoScroll": true,
+  "openInMainTab": false,
+  "hiddenSlashCommands": []
+}

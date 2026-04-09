@@ -1,4 +1,6 @@
 [
   "marp-slides",
-  "dataview"
+  "dataview",
+  "claudian",
+  "obsidian-llm-context-menu"
 ]

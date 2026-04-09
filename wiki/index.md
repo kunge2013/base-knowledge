@@ -22,7 +22,10 @@ This is an index of all pages in the wiki. Updated automatically on every ingest
 
 ## Concepts
 
-- [[concepts/llm-wiki|LLM Wiki]] - Pattern for persistent, compounding LLM-maintained knowledge bases
+- [[concepts/llm-wiki|LLM Wiki]] - Pattern for persistent, compounding LLM-maintained knowledge bases proposed by Andrej Karpathy
+- [[concepts/three-layer-architecture|Three-Layer Architecture - 三层架构]] - Core architecture of LLM Wiki: raw/ + wiki/ + Schema separation of concerns
+- [[concepts/idea-file|Idea File - 想法文件]] - AI agent era sharing concept: share ideas instead of code, let receiver's agent customize implementation
+- [[concepts/qmd|qmd - Quick Markdown Search]] - Local markdown search engine with BM25 + vector + LLM reranking hybrid strategy
 - [[concepts/retrieval-augmented-generation-rag|Retrieval-Augmented Generation (RAG)]] - Traditional approach for LLM document querying
 - [[concepts/vannevar-bush-memex|Vannevar Bush's Memex]] - Original 1945 vision of personal associative knowledge
 - [[concepts/knowledge-accumulation|Knowledge Accumulation]] - Principle of building knowledge incrementally over time
@@ -46,6 +49,7 @@ This is an index of all pages in the wiki. Updated automatically on every ingest
 ## Entities
 
 - [[entities/andrej-karpathy|Andrej Karpathy]] - AI researcher and author of the LLM Wiki idea
+- [[entities/antigravity-codes|Antigravity.codes]] - Technology blog that published the complete guide to Karpathy's LLM Wiki idea file
 - [[entities/langchain|LangChain]] - Company behind the LangChain framework
 - [[entities/langgraph|LangGraph]] - Framework product by LangChain
 - [[entities/crew-ai|Crew AI]] - Multi-agent framework

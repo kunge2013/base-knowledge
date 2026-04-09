@@ -54,3 +54,13 @@ This is an append-only chronological log of all changes to the wiki.
 - Created: saved query answer to wiki/queries/what-is-prompt-chaining.md
 - Updated: index.md added the query page
 - Summary: Explainer answer based on existing wiki content
+
+## [2026-04-09] ingest | Karpathy's LLM Wiki - The Complete Guide to His Idea File
+
+- Updated: 1 source summary (replaced original with full article summary)
+- Created: 3 concepts (Three-Layer Architecture, Idea File, qmd)
+- Updated: 3 existing concepts (LLM Wiki, RAG, Andrej Karpathy)
+- Created: 1 entity (Antigravity.codes)
+- Updated: 1 existing entity (Andrej Karpathy)
+- Updated: index.md
+- Raw source: `raw/articles/llm/Karpathy's LLM Wiki The Complete Guide to His Idea File.md`
