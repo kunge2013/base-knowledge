@@ -32,6 +32,9 @@ wiki/
 ├── concepts/              # Concept/topic pages (ideas, techniques, theories)
 ├── entities/              # Entity pages (authors, companies, products, people)
 └── queries/               # Saved query responses and analyses
+
+code/
+├── chapterxxx-code           # 某章节代码实现文件
 ```
 
 ## Page Format Conventions
@@ -169,3 +172,5 @@ Where `action` is one of: `ingest`, `update`, `query`, `lint`.
 - Follow Karpathy's original idea: the wiki should compound over time, with the LLM doing all the tedious maintenance work.
 - More cross-references are better than fewer.
 - Split concepts/entities into their own pages even if they're short - better to have many small pages than few large ones.
+
+
