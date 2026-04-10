@@ -12,3 +12,4 @@ responses = default_llm.batch([
 ])
 for response in responses:
     print(response)
+    print(80 *"=")

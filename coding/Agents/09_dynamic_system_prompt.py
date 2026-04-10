@@ -1,7 +1,7 @@
 """09_dynamic_system_prompt.py
 Example: Dynamic system prompt based on runtime context.
 """
-
+import logging
 from typing import TypedDict
 from langchain.agents import create_agent
 from langchain.agents.middleware import dynamic_prompt, ModelRequest
@@ -45,3 +45,4 @@ result = agent.invoke(
     {"messages": [{"role": "user", "content": "Explain machine learning"}]},
     context={"user_role": "expert"}
 )
+print(result)

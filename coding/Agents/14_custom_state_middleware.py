@@ -50,3 +50,5 @@ result = agent.invoke({
     "messages": [{"role": "user", "content": "I prefer technical explanations"}],
     "user_preferences": {"style": "technical", "verbosity": "detailed"},
 })
+
+print(result)
