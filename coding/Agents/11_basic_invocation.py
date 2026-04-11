@@ -22,3 +22,7 @@ result = agent.invoke(
 
 # Print the final response
 print(result)
+
+for msg in result['messages']:
+    print(f"{msg.type}: {msg.content}")
+    print(50 * "--")

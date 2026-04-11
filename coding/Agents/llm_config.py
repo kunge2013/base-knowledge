@@ -20,7 +20,7 @@ def get_llm(model_name: str = "gpt-4.1-mini", temperature: float = 0.1) -> BaseC
     """
     return ChatOpenAI(
         model= os.getenv("model"),
-        temperature=os.getenv("temperature"),
+        temperature=float(os.getenv("temperature") or 0.1),
         max_tokens=1000,
         timeout=30,
         api_key=os.getenv("OPENAI_API_KEY"),

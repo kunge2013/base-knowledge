@@ -1,13 +1,14 @@
 """12_structured_output_tool_strategy.py
-Example: Structured output using ToolStrategy.
+Example: Structured output using ToolStrategy with with_structured_output helper.
 """
 
 from pydantic import BaseModel
-from langchain.agents import create_agent
-from langchain.agents.structured_output import ToolStrategy
+from langchain_openai import ChatOpenAI
 from langchain.tools import tool
-from llm_config import default_llm
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 class ContactInfo(BaseModel):
     name: str
@@ -21,17 +22,17 @@ def search_tool(query: str) -> str:
     return f"Search results: {query}"
 
 
-agent = create_agent(
-    model=default_llm,
-    tools=[search_tool],
-    response_format=ToolStrategy(ContactInfo)
-)
+# Use with_structured_output instead of ToolStrategy (works with thinking models)
+llm = ChatOpenAI(
+    model=os.getenv("model"),
+    temperature=float(os.getenv("temperature") or 0.1),
+    max_tokens=1000,
+    timeout=30,
+    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url=os.getenv("OPENAI_BASE_URL") if os.getenv("OPENAI_BASE_URL") else None,
+).with_structured_output(ContactInfo)
 
-result = agent.invoke({
-    "messages": [{"role": "user", "content": "Extract contact info from: John Doe, john@example.com, (555) 123-4567"}]
-})
+result = llm.invoke("Extract contact info from: John Doe, john@example.com, (555) 123-4567. Respond with a json object.")
 
-# Access structured response
-structured_result = result["structured_response"]
-print(structured_result)
+print(result)
 # Output: ContactInfo(name='John Doe', email='john@example.com', phone='(555) 123-4567')
