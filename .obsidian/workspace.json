@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/concepts/arthas.md",
+                "file": "raw/articles/llm/langchain/11.接入到LangSmith平台.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "arthas"
+              "title": "11.接入到LangSmith平台"
             }
           },
           {
@@ -127,8 +127,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -252,8 +251,10 @@
   },
   "active": "0e1e18c4f975cf12",
   "lastOpenFiles": [
-    "wiki/concepts/model-context-protocol-mcp.md",
+    "raw/articles/llm/langchain/8.Structured output.md",
+    "raw/articles/llm/langchain/11.接入到LangSmith平台.md",
     "wiki/concepts/arthas.md",
+    "wiki/concepts/model-context-protocol-mcp.md",
     "wiki/overview.md",
     "raw/articles/llm/anthropic/1.Code execution with MCP building more efficient AI agents.md",
     "wiki/index.md.tmp.25168.1776148830273",
@@ -286,8 +287,6 @@
     "coding/Short_term_memory/README.md",
     "coding/Chapter_Tools_SUMMARY.md",
     "coding/Chapter_Streaming_SUMMARY.md",
-    "coding/Chapter_Short_term_memory_SUMMARY.md",
-    "raw/articles/llm/langchain/2.Models.md",
     "raw/articles/arthas/images/3.mcp执行结果.png",
     "raw/articles/arthas/images/2.mcp.png",
     "raw/articles/arthas/images/1.ui.png",
