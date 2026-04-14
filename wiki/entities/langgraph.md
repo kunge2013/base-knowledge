@@ -1,9 +1,9 @@
 ---
 title: LangGraph
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [product, llm-framework, langchain]
-sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"]]
+sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"], ["wiki/sources/langchain-1-agents", "LangChain - 1. Agents"]]
 ---
 
 # LangGraph
@@ -24,8 +24,10 @@ LangGraph 由 [[entities/langchain|LangChain]] 公司开发，是 LangChain 生�
 ## 相关链接
 
 - 概念页面：[[concepts/langgraph|LangGraph - 概念页面]]
+- LangChain `create_agent` API 底层使用 LangGraph 作为图运行时
 
 ## 参考文献
 
 - [[sources/agentic-design-patterns-chapter-1-prompt-chaining|Agentic Design Patterns - Chapter 1 - Prompt Chaining]]
 - [[sources/agentic-design-patterns-chapter-2-routing|Agentic Design Patterns - Chapter 2 - Routing]]
+- [[sources/langchain-1-agents|LangChain - 1. Agents]]

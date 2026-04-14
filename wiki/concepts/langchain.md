@@ -1,9 +1,9 @@
 ---
 title: LangChain
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [framework, llm, python]
-sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"]]
+sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/langchain-1-agents", "LangChain - 1. Agents"]]
 ---
 
 # LangChain
@@ -35,14 +35,29 @@ full_chain = (
 ## 相关项目
 
 - **[[concepts/langgraph|LangGraph]]**：由 LangChain 团队开发，扩展支持状态化和循环计算，适合实现更复杂的智能体行为
+- **LangChain Agents**: `create_agent` API 提供生产就绪的 Agent 运行时，基于 LangGraph 构建
+
+## Agent 特性
+
+LangChain `create_agent` 提供完整的 Agent 运行时支持：
+
+- **模型选择**: 支持[[static-model-selection|静态模型选择]]和[[dynamic-model-selection|动态模型选择]]
+- **工具管理**: 支持[[static-tools|静态工具]]和[[dynamic-tools|动态工具]]（基于状态/权限过滤）
+- **错误处理**: 可自定义工具执行错误处理
+- **结构化输出**: 支持两种策略[[providerstrategy|ProviderStrategy]]和[[toolstrategy|ToolStrategy]]
+- **记忆和状态**: 支持[[agent-memory|Agent Memory]]和[[custom-agent-state|Custom Agent State]]
+- **可扩展性**: 通过[[agent-middleware|Agent Middleware]]在各个执行阶段插入自定义逻辑
+- **ReAct 执行**: 默认遵循[[react-pattern|ReAct]]模式迭代执行
 
 ## 相关概念
 
 - [[concepts/prompt-chaining|提示词链]]
 - [[concepts/pipeline-pattern|管道模式]]
 - [[concepts/agentic-design-patterns|智能体设计模式]]
+- [[concepts/ai-agents|AI Agents - AI 智能体]]
 
 ## 参考文献
 
 - [[sources/agentic-design-patterns-chapter-1-prompt-chaining|Agentic Design Patterns - Chapter 1 - Prompt Chaining]]
+- [[sources/langchain-1-agents|LangChain - 1. Agents]]
 - https://python.langchain.com/

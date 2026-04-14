@@ -1,9 +1,9 @@
 ---
 title: LangGraph
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [framework, llm, agentic-design]
-sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"]]
+sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"], ["wiki/sources/langchain-1-agents", "LangChain - 1. Agents"]]
 ---
 
 # LangGraph
@@ -39,8 +39,18 @@ LangGraph 建立在 LangChain 之上，增加了图状结构执行的能力。
 - [[concepts/routing|路由]]
 - [[concepts/agentic-design-patterns|智能体设计模式]]
 
+## LangChain Agents 集成
+
+LangChain `create_agent` API 底层就是使用 LangGraph 构建基于图的 Agent 运行时：
+
+- 图由节点（步骤）和边（连接）组成
+- 节点包括模型节点（调用 LLM）和工具节点（执行工具）
+- Agent 在图中遍历执行，直到满足停止条件
+- 支持流式输出和状态持久化
+
 ## 参考文献
 
 - [[sources/agentic-design-patterns-chapter-1-prompt-chaining|Agentic Design Patterns - Chapter 1 - Prompt Chaining]]
 - [[sources/agentic-design-patterns-chapter-2-routing|Agentic Design Patterns - Chapter 2 - Routing]]
+- [[sources/langchain-1-agents|LangChain - 1. Agents]]
 - https://langchain-ai.github.io/langgraph/

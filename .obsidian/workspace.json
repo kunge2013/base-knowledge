@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/articles/llm/anthropic/1.Code execution with MCP building more efficient AI agents.md",
+                "file": "wiki/concepts/arthas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.Code execution with MCP building more efficient AI agents"
+              "title": "arthas"
             }
           },
           {
@@ -106,7 +106,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"from dotenv import load_dotenv\"",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -127,7 +127,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -251,6 +252,25 @@
   },
   "active": "0e1e18c4f975cf12",
   "lastOpenFiles": [
+    "wiki/concepts/model-context-protocol-mcp.md",
+    "wiki/concepts/arthas.md",
+    "wiki/overview.md",
+    "raw/articles/llm/anthropic/1.Code execution with MCP building more efficient AI agents.md",
+    "wiki/index.md.tmp.25168.1776148830273",
+    "wiki/entities/alibaba.md",
+    "wiki/concepts/custom-agent-state.md",
+    "wiki/concepts/agent-memory.md",
+    "wiki/concepts/agent-middleware.md",
+    "wiki/concepts/providerstrategy.md",
+    "wiki/concepts/toolstrategy.md",
+    "wiki/concepts/structured-output.md",
+    "wiki/concepts/dynamic-tools.md",
+    "wiki/concepts/static-tools.md",
+    "wiki/concepts/dynamic-model-selection.md",
+    "wiki/concepts/static-model-selection.md",
+    "wiki/concepts/react-pattern.md",
+    "wiki/sources/langchain-1-agents.md",
+    "wiki/sources/arthas-1-arthas-ji-ru.md",
     "coding/Streaming/llm_config.py",
     "coding/Streaming/README.md",
     "coding/Streaming/08_streaming_from_sub_agents.py",
@@ -261,35 +281,16 @@
     "coding/Streaming/03_custom_updates.py",
     "coding/Streaming/02_llm_tokens.py",
     "coding/Streaming/01_agent_progress.py",
-    "coding/Streaming",
     "raw/articles/快速入门 - SQLBot 文档.md",
     "coding/Tools/README.md",
-    "coding/Tools/llm_config.py",
     "coding/Short_term_memory/README.md",
     "coding/Chapter_Tools_SUMMARY.md",
     "coding/Chapter_Streaming_SUMMARY.md",
     "coding/Chapter_Short_term_memory_SUMMARY.md",
     "raw/articles/llm/langchain/2.Models.md",
-    "raw/articles/llm/anthropic/1.Code execution with MCP building more efficient AI agents.md",
-    "raw/articles/llm/langchain/1.Agents.md",
-    "README.md",
-    "raw/articles/arthas/1. arthas接入.md",
-    "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/0-Prebuilt middleware(预置中间件).md",
     "raw/articles/arthas/images/3.mcp执行结果.png",
     "raw/articles/arthas/images/2.mcp.png",
     "raw/articles/arthas/images/1.ui.png",
-    "raw/articles/plugins/1.Obsidian插件入门 Build a plugin.md",
-    "raw/articles/plugins/README.md",
-    "coding/Chapter_5_Tools_SUMMARY.md",
-    "coding/Chapter_6_Short_term_Memory_SUMMARY.md",
-    "coding/Chapter_6_Short_term_Memory/README.md",
-    "coding/Chapter_5_Tools/README.md",
-    "coding/Chapter_10_Prebuilt_Middleware_SUMMARY.md",
-    "coding/Chapter_10_Prebuilt_Middleware/README.md",
-    "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/1-Prebuilt middleware.md",
-    "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/README.md",
-    "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/20260413110515-Prebuilt middleware.md",
-    "raw/articles/llm/langchain/3.Messages.md",
     "raw/assets/book/agentic-design-patterns/images/chapter-12/image2.png",
     "raw/assets/book/agentic-design-patterns/images/chapter-9/image4.png",
     "raw/assets/book/agentic-design-patterns/images/chapter-9/image3.png",

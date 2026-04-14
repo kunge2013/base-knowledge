@@ -1,9 +1,9 @@
 ---
 title: AI Agents - AI 智能体
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [concept, ai, agentic-design]
-sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"]]
+sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Agentic Design Patterns - Chapter 1 - Prompt Chaining"], ["wiki/sources/agentic-design-patterns-chapter-2-routing", "Agentic Design Patterns - Chapter 2 - Routing"], ["wiki/sources/langchain-1-agents", "LangChain - 1. Agents"]]
 ---
 
 # AI Agents（AI 智能体）
@@ -53,7 +53,30 @@ sources: [["wiki/sources/agentic-design-patterns-chapter-1-prompt-chaining", "Ag
 - [[concepts/prompt-chaining|提示词链]]
 - [[concepts/routing|路由]]
 
+## 执行模式
+
+### ReAct 模式
+
+**ReAct**（Reasoning + Acting）是最常见的迭代执行模式：Agent 在推理（Reasoning）和行动（Acting）之间交替，逐步解决问题。
+
+1. 推理：分析当前状态，决定下一步做什么
+2. 行动：调用工具获取信息
+3. 观察：获取工具执行结果
+4. 重复：继续直到问题解决
+
+ReAct 模式让 LLM 能够在获取新信息后修正推理方向，比一次性解决更可靠。
+
+## 核心组件
+
+在 LangChain 实现中，Agent 通常包含：
+
+- **Model** - 推理引擎，支持静态和动态选择
+- **Tools** - 可调用的外部工具，支持静态和动态管理
+- **System Prompt** - 定义 Agent 的行为方式
+- **Memory/State** - 维护对话状态和记忆
+
 ## 参考文献
 
 - [[sources/agentic-design-patterns-chapter-1-prompt-chaining|Agentic Design Patterns - Chapter 1 - Prompt Chaining]]
 - [[sources/agentic-design-patterns-chapter-2-routing|Agentic Design Patterns - Chapter 2 - Routing]]
+- [[sources/langchain-1-agents|LangChain - 1. Agents]]

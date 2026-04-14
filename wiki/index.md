@@ -1,7 +1,7 @@
 ---
 title: Index
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [meta]
 sources: []
 ---
@@ -19,6 +19,8 @@ This is an index of all pages in the wiki. Updated automatically on every ingest
 - [[sources/karpathys-llm-wiki-the-complete-guide-to-his-idea-file|Karpathy's LLM Wiki - The Complete Guide to His Idea File]] - Summary of the original LLM Wiki idea file by Andrej Karpathy
 - [[sources/agentic-design-patterns-chapter-1-prompt-chaining|Agentic Design Patterns - Chapter 1 - Prompt Chaining]] - First chapter of Agentic Design Patterns book, introducing the Prompt Chaining pattern
 - [[sources/agentic-design-patterns-chapter-2-routing|Agentic Design Patterns - Chapter 2 - Routing]] - Second chapter of Agentic Design Patterns book, introducing the Routing pattern for conditional logic
+- [[sources/arthas-1-arthas-ji-ru|Arthas - 1. Arthas接入]] - 实操笔记：Spring Boot 集成 Arthas 并启用 MCP 支持
+- [[sources/langchain-1-agents|LangChain - 1. Agents]] - LangChain 官方文档：Agents 完整说明，包括核心组件和高级特性
 
 ## Concepts
 
@@ -45,6 +47,19 @@ This is an index of all pages in the wiki. Updated automatically on every ingest
 - [[concepts/langchain|LangChain]] - Open-source framework for building LLM applications
 - [[concepts/langgraph|LangGraph]] - Framework for building stateful, graph-based LLM agents
 - [[concepts/crew-ai|Crew AI]] - Framework for building multi-agent collaboration systems
+- [[concepts/arthas|Arthas]] - Alibaba 开源 Java 应用诊断调试工具
+- [[concepts/model-context-protocol-mcp|Model Context Protocol (MCP)]] - AI 客户端与外部工具通信的开放协议
+- [[concepts/react-pattern|ReAct Pattern]] - AI Agent 迭代执行模式：Reasoning + Acting
+- [[concepts/static-model-selection|Static Model Selection]] - 静态模型选择策略
+- [[concepts/dynamic-model-selection|Dynamic Model Selection]] - 基于上下文动态选择模型策略
+- [[concepts/static-tools|Static Tools]] - 静态工具定义方式
+- [[concepts/dynamic-tools|Dynamic Tools]] - 基于上下文动态过滤工具
+- [[concepts/structured-output|Structured Output]] - 让 Agent 输出符合特定模式的结构化数据
+- [[concepts/toolstrategy|ToolStrategy]] - 使用工具调用实现结构化输出
+- [[concepts/providerstrategy|ProviderStrategy]] - 使用模型原生能力实现结构化输出
+- [[concepts/agent-middleware|Agent Middleware]] - Agent 中间件，用于在执行阶段拦截和自定义行为
+- [[concepts/agent-memory|Agent Memory]] - Agent 在对话中存储和检索信息的能力
+- [[concepts/custom-agent-state|Custom Agent State]] - 自定义 Agent 状态扩展
 
 ## Entities
 
@@ -57,6 +72,7 @@ This is an index of all pages in the wiki. Updated automatically on every ingest
 - [[entities/openai|OpenAI]] - AI company behind GPT models
 - [[entities/gemini|Gemini]] - Google's large language model series
 - [[entities/marco-fago|Marco Fago]] - Author of the example code in Agentic Design Patterns
+- [[entities/alibaba|Alibaba]] - Chinese multinational technology company, open-source author of Arthas
 
 ## Queries
 

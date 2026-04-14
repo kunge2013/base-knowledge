@@ -1,7 +1,7 @@
 ---
 title: Change Log
 date: 2026-04-09
-last_updated: 2026-04-09
+last_updated: 2026-04-14
 tags: [meta]
 sources: []
 ---
@@ -64,3 +64,14 @@ This is an append-only chronological log of all changes to the wiki.
 - Updated: 1 existing entity (Andrej Karpathy)
 - Updated: index.md
 - Raw source: `raw/articles/llm/Karpathy's LLM Wiki The Complete Guide to His Idea File.md`
+
+## [2026-04-14] ingest | Arthas - 1. Arthas接入 + LangChain - 1. Agents
+
+- Created: 2 source summaries (arthas-1-arthas-ji-ru, langchain-1-agents)
+- Created: 15 concepts (Arthas, Model Context Protocol (MCP), ReAct Pattern, Static Model Selection, Dynamic Model Selection, Static Tools, Dynamic Tools, Structured Output, ToolStrategy, ProviderStrategy, Agent Middleware, Agent Memory, Custom Agent State)
+- Created: 1 entity (Alibaba)
+- Updated: 5 existing pages (ai-agents, langchain, langgraph, langchain-entity, langgraph-entity)
+- Updated: index.md
+- Raw sources:
+  - `raw/articles/arthas/1. arthas接入.md`
+  - `raw/articles/llm/langchain/1.Agents.md`
