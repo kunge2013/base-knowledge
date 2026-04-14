@@ -1,0 +1,20 @@
+{
+  "id": "conv-1776050015773-7c7ur0xk6",
+  "title": "Translate Chinese to English",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776050015775,
+  "updatedAt": 1776050067764,
+  "lastResponseAt": 1776050061440,
+  "sessionId": "8e753ea3-581f-4c40-aa1d-ec094a52e07d",
+  "sdkSessionId": "8e753ea3-581f-4c40-aa1d-ec094a52e07d",
+  "currentNote": "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/0-Prebuilt middleware(预置中间件).md",
+  "usage": {
+    "model": "claude-sonnet-4-6",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

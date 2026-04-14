@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="claudian">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.obsidian/plugins/claudian/claudian.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

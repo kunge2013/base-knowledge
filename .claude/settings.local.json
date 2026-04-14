@@ -11,7 +11,13 @@
       "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show HEAD:wiki/overview.md)",
       "Bash(git -C \"D:\\\\github.io\\\\base-knowledge\" show HEAD:CLAUDE.md)",
       "Bash(git -C D:/github.io/base-knowledge status)",
-      "Bash(git -C D:/github.io/base-knowledge log --oneline -5)"
+      "Bash(git -C D:/github.io/base-knowledge log --oneline -5)",
+      "WebSearch",
+      "Bash(ruff:*)",
+      "Bash(black:*)",
+      "Bash(mypy:*)",
+      "Bash(for f in *.py)",
+      "Bash(done:*)"
     ]
   }
 }
