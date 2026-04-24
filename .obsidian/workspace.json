@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/articles/llm/langchain/2.Models.md",
+                "file": "raw/articles/llm/deepagent-langchain/3.Customize Deep Agents.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2.Models"
+              "title": "3.Customize Deep Agents"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/articles/快速入门 - SQLBot 文档.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "快速入门 - SQLBot 文档"
+              "title": "CLAUDE"
             }
           },
           {
@@ -75,8 +75,7 @@
               "title": "1.ui"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -251,45 +250,45 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "8110d139f4eecafb",
+  "active": "186d1b592fa334e0",
   "lastOpenFiles": [
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/01_model_configuration.py~",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/Chapter_3_Customize_SUMMARY.md",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/requirements.txt",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/llm_config.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/README.md",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/09_structured_output.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/08_memory.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/07_skills.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/06_human_in_the_loop.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/05_subagents.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/04_middleware.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/03_system_prompt.py",
+    "coding/langchain/deepagent-langchain/Chapter_3_Customize/03_system_prompt.py.tmp.24976.1776926971762",
+    "coding/langchain/deepagent-langchain/Chapter_2_Quickstart/Chapter_2_Quickstart_SUMMARY.md",
+    "coding/langchain/deepagent-langchain/Chapter_2_Quickstart/README.md",
+    "raw/articles/llm/deepagent-langchain/3.Customize Deep Agents.md",
+    "raw/articles/llm/deepagent-langchain/2.Quickstart.md",
+    "raw/articles/llm/langchain/2.Models.md",
+    "raw/articles/llm/langchain/Prebuilt middleware (预置中间件)/0-Prebuilt middleware(预置中间件).md",
+    "raw/articles/llm/langchain/11.接入到LangSmith平台.md",
+    "CLAUDE.md",
+    "raw/articles/llm/deepagent-langchain/1.Deep Agents overview.md",
+    "raw/articles/快速入门 - SQLBot 文档.md",
     "raw/articles/llm/Karpathy's LLM Wiki The Complete Guide to His Idea File.md",
     "raw/articles/llm/llm-wiki.md",
     "raw/articles/llm/anthropic/20260422142641-andrej-karpathy-skillsCLAUDE.md at main.md",
     "raw/articles/llm/langchain/10.Prebuilt middleware.md",
-    "raw/articles/llm/langchain/11.接入到LangSmith平台.md",
     "raw/articles/llm/langchain/11.Custom middleware.md",
-    "raw/articles/llm/langchain/2.Models.md",
     "raw/articles/llm/langchain/1.Agents.md",
     "raw/articles/llm/anthropic/1.Code execution with MCP building more efficient AI agents.md",
     "coding/langchain/Short_term_memory/Chapter_Short_term_memory_SUMMARY.md",
     "coding/langchain/Tools/Chapter_Tools_SUMMARY.md",
-    "coding/langchain/requirements.txt",
     "coding/langchain/Streaming/Chapter_Streaming_SUMMARY.md",
     "coding/langchain/Models/Chapter_Models_SUMMARY.md",
     "coding/langchain/Agents/Chapter_Agents_SUMMARY.md",
     "coding/langchain/Messages/Chapter_Messages_SUMMARY.md",
-    "coding/langchain/Chapter_5_Tools/Chapter_5_Tools_SUMMARY.md",
-    "coding/langchain/Chapter_10_Prebuilt_Middleware/Chapter_10_Prebuilt_Middleware_SUMMARY.md",
-    "coding/langchain/Chapter_6_Short_term_Memory/Chapter_6_Short_term_Memory_SUMMARY.md",
     "raw/articles/arthas/images/3.mcp执行结果.png",
-    "coding/langchain",
-    "raw/articles/llm/langchain/8.Structured output.md",
-    "wiki/concepts/arthas.md",
-    "wiki/concepts/model-context-protocol-mcp.md",
-    "wiki/overview.md",
-    "wiki/index.md.tmp.25168.1776148830273",
-    "wiki/entities/alibaba.md",
-    "wiki/concepts/custom-agent-state.md",
-    "wiki/concepts/agent-memory.md",
-    "wiki/concepts/agent-middleware.md",
-    "coding/langchain/Streaming/llm_config.py",
-    "coding/langchain/Streaming/08_streaming_from_sub_agents.py",
-    "coding/langchain/Streaming/07_human_in_the_loop.py",
-    "coding/langchain/Streaming/06_streaming_tool_calls.py",
-    "coding/langchain/Streaming/05_thinking_tokens.py",
-    "coding/langchain/Streaming/04_multiple_modes.py",
-    "coding/langchain/Streaming/03_custom_updates.py",
     "raw/articles/arthas/images/2.mcp.png",
     "raw/articles/arthas/images/1.ui.png",
     "raw/assets/book/agentic-design-patterns/images/chapter-12/image2.png",

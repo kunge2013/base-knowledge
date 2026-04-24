@@ -1,0 +1,6 @@
+deepagents
+tavily-python
+langchain-openai
+langchain-anthropic
+python-dotenv
+pydantic
