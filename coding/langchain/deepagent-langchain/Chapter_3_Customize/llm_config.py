@@ -1,4 +1,4 @@
-"""LLM Configuration for Deep Agents Customize examples.
+"""LLM Configuration for LangChain Agents examples.
 
 Configure your LLM API settings here. All examples use this configuration.
 """
@@ -7,10 +7,7 @@ import os
 from langchain_openai import ChatOpenAI
 from langchain_core.language_models.chat_models import BaseChatModel
 from dotenv import load_dotenv
-
 load_dotenv()
-
-
 def get_llm(model_name: str = "gpt-4.1-mini", temperature: float = 0.1) -> BaseChatModel:
     """Get configured LLM instance.
 
@@ -22,8 +19,8 @@ def get_llm(model_name: str = "gpt-4.1-mini", temperature: float = 0.1) -> BaseC
         Configured ChatOpenAI instance
     """
     return ChatOpenAI(
-        model=model_name,
-        temperature=temperature,
+        model= os.getenv("model"),
+        temperature=float(os.getenv("temperature") or 0.1),
         max_tokens=1000,
         timeout=30,
         api_key=os.getenv("OPENAI_API_KEY"),

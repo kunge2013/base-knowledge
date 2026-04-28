@@ -13,6 +13,9 @@ Key Concepts:
 
 import os
 from typing import Literal
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from tavily import TavilyClient
 from deepagents import create_deep_agent

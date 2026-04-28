@@ -26,7 +26,7 @@ from pydantic import BaseModel, Field
 from tavily import TavilyClient
 from deepagents import create_deep_agent
 
-tavily_client = TavilyClient(api_key=os.environ.get("TAVILY_API_KEY", ""))
+tavily_client = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
 
 
 def internet_search(

@@ -18,6 +18,10 @@ from deepagents import create_deep_agent
 # Reuse the search tool and instructions from 02_create_agent.py
 import os
 from typing import Literal
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from tavily import TavilyClient
 
 tavily_client = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
