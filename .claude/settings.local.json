@@ -17,7 +17,10 @@
       "Bash(black:*)",
       "Bash(mypy:*)",
       "Bash(for f in *.py)",
-      "Bash(done:*)"
+      "Bash(done:*)",
+      "Skill(skill-creator)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
     ]
   }
 }
