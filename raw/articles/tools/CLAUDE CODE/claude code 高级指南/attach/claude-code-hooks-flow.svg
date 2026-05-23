@@ -1,0 +1,313 @@
+<svg width="1700" height="1280" viewBox="0 0 1700 1280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Code Hooks 触发时机流程图</title>
+  <desc id="desc">A timeline-style flowchart showing exactly when each Claude Code hook fires during session start, prompt submit, model reasoning, permission request, tool execution, side events, stop, and session end.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1700" y2="1280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="main" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="hook" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F97316"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="model" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="tool" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#059669"/>
+      <stop offset="1" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="end" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#334155"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2L12 7L2 12" fill="none" stroke="#334155" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="hookArrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2L12 7L2 12" fill="none" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title { font: 800 48px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0F172A; }
+      .subtitle { font: 500 22px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .section { font: 800 18px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; letter-spacing: .08em; }
+      .mainTitle { font: 800 24px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #FFFFFF; }
+      .mainText { font: 500 16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E2E8F0; }
+      .hookTitle { font: 800 23px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #FFFFFF; }
+      .hookText { font: 500 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #FFF7ED; }
+      .darkTitle { font: 800 22px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0F172A; }
+      .darkText { font: 500 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .badge { font: 800 14px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #FFFFFF; letter-spacing: .04em; }
+      .num { font: 800 18px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #FFFFFF; }
+      .edge { stroke: #334155; stroke-width: 3.4; marker-end: url(#arrow); fill: none; }
+      .hookEdge { stroke: #F97316; stroke-width: 3; marker-end: url(#hookArrow); fill: none; stroke-dasharray: 8 8; }
+      .returnEdge { stroke: #64748B; stroke-width: 2.7; marker-end: url(#arrow); fill: none; stroke-dasharray: 7 8; }
+      .lane { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 2; }
+      .trigger { fill: #FFF7ED; stroke: #FDBA74; stroke-width: 2; }
+      .triggerText { font: 800 15px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #9A3412; }
+    </style>
+  </defs>
+
+  <rect width="1700" height="1280" fill="url(#bg)"/>
+  <text x="70" y="78" class="title">Claude Code Hooks 触发时机流程图</text>
+  <text x="70" y="118" class="subtitle">重点看橙色“触发点”：它标明 hook 是在某个动作之前、之后、失败时、压缩前后，还是会话结束时运行。</text>
+
+  <rect x="54" y="154" width="1592" height="146" rx="26" class="lane"/>
+  <rect x="54" y="334" width="1592" height="166" rx="26" class="lane"/>
+  <rect x="54" y="534" width="1592" height="258" rx="26" class="lane"/>
+  <rect x="54" y="826" width="1592" height="196" rx="26" class="lane"/>
+  <rect x="54" y="1056" width="1592" height="142" rx="26" class="lane"/>
+
+  <text x="80" y="186" class="section">1. SESSION START</text>
+  <text x="80" y="366" class="section">2. USER PROMPT + MODEL</text>
+  <text x="80" y="566" class="section">3. TOOL USE PIPELINE</text>
+  <text x="80" y="858" class="section">4. SIDE EVENTS</text>
+  <text x="80" y="1088" class="section">5. STOP + SESSION END</text>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="210" width="244" height="68" rx="18" fill="url(#main)"/>
+    <circle cx="162" cy="244" r="19" fill="#FFFFFF" fill-opacity="0.23"/>
+    <text x="162" y="251" text-anchor="middle" class="num">A</text>
+    <text x="196" y="238" class="mainTitle">会话启动/恢复</text>
+    <text x="196" y="262" class="mainText">startup / resume / clear</text>
+  </g>
+
+  <g>
+    <rect x="430" y="218" width="150" height="52" rx="16" class="trigger"/>
+    <text x="505" y="239" text-anchor="middle" class="triggerText">触发点</text>
+    <text x="505" y="258" text-anchor="middle" class="triggerText">会话开始后</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="642" y="196" width="310" height="96" rx="22" fill="url(#hook)"/>
+    <rect x="666" y="212" width="94" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="713" y="229" text-anchor="middle" class="badge">HOOK</text>
+    <text x="666" y="258" class="hookTitle">SessionStart</text>
+    <text x="666" y="282" class="hookText">返回 additionalContext / watchPaths</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1134" y="210" width="254" height="68" rx="18" fill="url(#main)"/>
+    <circle cx="1168" cy="244" r="19" fill="#FFFFFF" fill-opacity="0.23"/>
+    <text x="1168" y="251" text-anchor="middle" class="num">B</text>
+    <text x="1202" y="238" class="mainTitle">等待用户输入</text>
+    <text x="1202" y="262" class="mainText">进入交互循环</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="406" width="244" height="68" rx="18" fill="url(#main)"/>
+    <circle cx="162" cy="440" r="19" fill="#FFFFFF" fill-opacity="0.23"/>
+    <text x="162" y="447" text-anchor="middle" class="num">C</text>
+    <text x="196" y="434" class="mainTitle">用户提交 Prompt</text>
+    <text x="196" y="458" class="mainText">原始用户输入产生</text>
+  </g>
+
+  <g>
+    <rect x="430" y="414" width="150" height="52" rx="16" class="trigger"/>
+    <text x="505" y="435" text-anchor="middle" class="triggerText">触发点</text>
+    <text x="505" y="454" text-anchor="middle" class="triggerText">Claude 处理前</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="642" y="392" width="314" height="96" rx="22" fill="url(#hook)"/>
+    <rect x="666" y="408" width="94" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="713" y="425" text-anchor="middle" class="badge">HOOK</text>
+    <text x="666" y="454" class="hookTitle">UserPromptSubmit</text>
+    <text x="666" y="478" class="hookText">审计输入 / 注入上下文 / 阻止</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1134" y="392" width="284" height="96" rx="22" fill="url(#model)"/>
+    <circle cx="1168" cy="440" r="19" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="1168" y="447" text-anchor="middle" class="num">D</text>
+    <text x="1202" y="434" class="mainTitle">Claude 推理</text>
+    <text x="1202" y="458" class="mainText">决定直接回复或调用工具</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="628" width="242" height="82" rx="20" fill="url(#main)"/>
+    <circle cx="162" cy="669" r="19" fill="#FFFFFF" fill-opacity="0.23"/>
+    <text x="162" y="676" text-anchor="middle" class="num">E</text>
+    <text x="196" y="654" class="mainTitle">需要权限？</text>
+    <text x="196" y="680" class="mainText">工具需要确认时</text>
+    <text x="196" y="702" class="mainText">进入权限流程</text>
+  </g>
+
+  <g>
+    <rect x="430" y="636" width="150" height="52" rx="16" class="trigger"/>
+    <text x="505" y="657" text-anchor="middle" class="triggerText">触发点</text>
+    <text x="505" y="676" text-anchor="middle" class="triggerText">权限弹窗前</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="642" y="610" width="292" height="112" rx="22" fill="url(#hook)"/>
+    <rect x="666" y="626" width="94" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="713" y="643" text-anchor="middle" class="badge">HOOK</text>
+    <text x="666" y="672" class="hookTitle">PermissionRequest</text>
+    <text x="666" y="696" class="hookText">allow / deny / updatedInput</text>
+    <text x="666" y="716" class="hookText">未决策时继续询问用户</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1026" y="610" width="292" height="112" rx="22" fill="url(#hook)"/>
+    <rect x="1050" y="626" width="94" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="1097" y="643" text-anchor="middle" class="badge">HOOK</text>
+    <text x="1050" y="672" class="hookTitle">PreToolUse</text>
+    <text x="1050" y="696" class="hookText">真正执行工具之前触发</text>
+    <text x="1050" y="716" class="hookText">可 deny / ask / 改写输入</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1390" y="628" width="200" height="82" rx="20" fill="url(#tool)"/>
+    <circle cx="1424" cy="669" r="19" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="1424" y="676" text-anchor="middle" class="num">F</text>
+    <text x="1458" y="654" class="mainTitle">执行工具</text>
+    <text x="1458" y="680" class="mainText">Bash / Edit / MCP</text>
+    <text x="1458" y="702" class="mainText">Read / Agent / ...</text>
+  </g>
+
+  <g>
+    <rect x="170" y="742" width="212" height="36" rx="18" class="trigger"/>
+    <text x="276" y="765" text-anchor="middle" class="triggerText">权限被拒绝后触发</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="420" y="732" width="268" height="52" rx="18" fill="url(#hook)"/>
+    <text x="448" y="765" class="hookTitle">PermissionDenied</text>
+  </g>
+
+  <g>
+    <rect x="760" y="742" width="186" height="36" rx="18" class="trigger"/>
+    <text x="853" y="765" text-anchor="middle" class="triggerText">工具成功后触发</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="984" y="732" width="236" height="52" rx="18" fill="url(#hook)"/>
+    <text x="1012" y="765" class="hookTitle">PostToolUse</text>
+  </g>
+
+  <g>
+    <rect x="1260" y="742" width="186" height="36" rx="18" class="trigger"/>
+    <text x="1353" y="765" text-anchor="middle" class="triggerText">工具失败后触发</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1472" y="732" width="162" height="52" rx="18" fill="url(#hook)"/>
+    <text x="1494" y="765" class="hookTitle">Failure</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="894" width="314" height="88" rx="20" fill="#FFFFFF" stroke="#F97316" stroke-width="3"/>
+    <text x="156" y="928" class="darkTitle">子代理生命周期</text>
+    <text x="156" y="954" class="darkText">SubagentStart：子代理启动时</text>
+    <text x="156" y="976" class="darkText">SubagentStop：子代理结束时</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="894" width="326" height="88" rx="20" fill="#FFFFFF" stroke="#F97316" stroke-width="3"/>
+    <text x="528" y="928" class="darkTitle">上下文压缩生命周期</text>
+    <text x="528" y="954" class="darkText">PreCompact：压缩前</text>
+    <text x="528" y="976" class="darkText">PostCompact：压缩后</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="884" y="894" width="326" height="88" rx="20" fill="#FFFFFF" stroke="#F97316" stroke-width="3"/>
+    <text x="912" y="928" class="darkTitle">通知与任务事件</text>
+    <text x="912" y="954" class="darkText">Notification：通知产生时</text>
+    <text x="912" y="976" class="darkText">TaskCreated / TaskCompleted</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1268" y="894" width="326" height="88" rx="20" fill="#FFFFFF" stroke="#F97316" stroke-width="3"/>
+    <text x="1296" y="928" class="darkTitle">文件/配置/目录变化</text>
+    <text x="1296" y="954" class="darkText">FileChanged / ConfigChange</text>
+    <text x="1296" y="976" class="darkText">CwdChanged / InstructionsLoaded</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="1110" width="284" height="68" rx="18" fill="url(#main)"/>
+    <circle cx="162" cy="1144" r="19" fill="#FFFFFF" fill-opacity="0.23"/>
+    <text x="162" y="1151" text-anchor="middle" class="num">G</text>
+    <text x="196" y="1138" class="mainTitle">Claude 准备结束回复</text>
+    <text x="196" y="1162" class="mainText">本轮响应即将停止</text>
+  </g>
+
+  <g>
+    <rect x="470" y="1118" width="150" height="52" rx="16" class="trigger"/>
+    <text x="545" y="1139" text-anchor="middle" class="triggerText">触发点</text>
+    <text x="545" y="1158" text-anchor="middle" class="triggerText">回复结束前</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="680" y="1096" width="248" height="96" rx="22" fill="url(#hook)"/>
+    <rect x="704" y="1112" width="94" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.22"/>
+    <text x="751" y="1129" text-anchor="middle" class="badge">HOOK</text>
+    <text x="704" y="1158" class="hookTitle">Stop</text>
+    <text x="704" y="1182" class="hookText">最终检查，可阻塞继续修复</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1030" y="1110" width="244" height="68" rx="18" fill="url(#end)"/>
+    <circle cx="1064" cy="1144" r="19" fill="#FFFFFF" fill-opacity="0.20"/>
+    <text x="1064" y="1151" text-anchor="middle" class="num">H</text>
+    <text x="1098" y="1138" class="mainTitle">会话退出/清空</text>
+    <text x="1098" y="1162" class="mainText">结束会话资源</text>
+  </g>
+
+  <g>
+    <rect x="1320" y="1118" width="150" height="52" rx="16" class="trigger"/>
+    <text x="1395" y="1139" text-anchor="middle" class="triggerText">触发点</text>
+    <text x="1395" y="1158" text-anchor="middle" class="triggerText">会话结束时</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1508" y="1110" width="138" height="68" rx="18" fill="url(#hook)"/>
+    <text x="1532" y="1138" class="hookTitle">SessionEnd</text>
+    <text x="1532" y="1162" class="hookText">清理/通知</text>
+  </g>
+
+  <path d="M372 244H430" class="edge"/>
+  <path d="M580 244H642" class="hookEdge"/>
+  <path d="M952 244H1134" class="edge"/>
+  <path d="M1261 278V330C1261 376 1198 406 1146 406H372" class="edge"/>
+
+  <path d="M372 440H430" class="edge"/>
+  <path d="M580 440H642" class="hookEdge"/>
+  <path d="M956 440H1134" class="edge"/>
+  <path d="M1276 488V516C1276 572 390 572 370 628" class="edge"/>
+
+  <path d="M370 669H430" class="edge"/>
+  <path d="M580 662H642" class="hookEdge"/>
+  <path d="M934 666H1026" class="edge"/>
+  <path d="M1318 666H1390" class="edge"/>
+  <path d="M1490 710V732" class="edge"/>
+  <path d="M249 710V742H170" class="returnEdge"/>
+  <path d="M382 760H420" class="hookEdge"/>
+  <path d="M946 760H984" class="hookEdge"/>
+  <path d="M1446 760H1472" class="hookEdge"/>
+
+  <path d="M1102 784V1044C1102 1086 400 1084 270 1110" class="returnEdge"/>
+  <path d="M412 1144H470" class="edge"/>
+  <path d="M620 1144H680" class="hookEdge"/>
+  <path d="M928 1144H1030" class="edge"/>
+  <path d="M1274 1144H1320" class="edge"/>
+  <path d="M1470 1144H1508" class="hookEdge"/>
+
+  <g>
+    <rect x="70" y="1218" width="1560" height="44" rx="22" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <circle cx="98" cy="1240" r="7" fill="#334155"/>
+    <text x="116" y="1246" class="darkText">实线：Claude Code 主流程。</text>
+    <circle cx="332" cy="1240" r="7" fill="#F97316"/>
+    <text x="350" y="1246" class="darkText">橙色触发点 + 虚线：hook 在这里运行，返回 stdout/HTTP JSON 后影响后续流程。</text>
+    <circle cx="914" cy="1240" r="7" fill="#64748B"/>
+    <text x="932" y="1246" class="darkText">灰色虚线：工具结果回到 Claude，可能继续推理、再次调用工具，或结束回复。</text>
+  </g>
+</svg>

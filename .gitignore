@@ -3,3 +3,4 @@ data.json
 .obsidian/
 .env
 .idea
+.claude/settings.local.json
