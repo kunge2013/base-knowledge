@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a8a20c81e16c3c79",
+        "id": "789099769c7b4517",
         "type": "tabs",
         "children": [
           {
-            "id": "0e1e18c4f975cf12",
+            "id": "1b395e4b916ebcf9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw/articles/tools/CLAUDE CODE/claude code 高级指南/1.claude-code-hooks.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "1.claude-code-hooks"
+              "title": "新标签页"
             }
           }
         ]
@@ -198,6 +194,11 @@
   },
   "active": "d0fa7fecc6d2c9ea",
   "lastOpenFiles": [
+    "raw/articles/tools/CLAUDE CODE/openspec/openspec使用.md",
+    "raw/articles/tools/CLAUDE CODE/openspec/3.OpenSpec 实战指南：AI 辅助软件工程全流程深度复盘.md",
+    "raw/articles/tools/CLAUDE CODE/openspec/2.OpenSpec 实战指南.md",
+    "raw/articles/tools/CLAUDE CODE/openspec/1.OpenSepc 使用手册.md",
+    "raw/articles/tools/CLAUDE CODE/openspec",
     "raw/articles/tools/CLAUDE CODE/claude code 高级指南/1.claude-code-hooks.md",
     "raw/articles/tools/CLAUDE CODE/claude code 高级指南/1.claude-code-hooks.md",
     "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach/claude-code-hooks-flow.svg",
@@ -229,13 +230,9 @@
     "raw/articles/tools",
     "coding/langchain/Streaming/Chapter_Streaming_SUMMARY.md",
     "raw/articles/arthas/1. arthas接入.md",
-    "raw/books/提示工程指南/2.提示技术.md",
-    "raw/books/agentic-design-patterns-智能体设计模式/Chapter 5_ Tool Use.md",
-    "raw/books/agentic-design-patterns-智能体设计模式/Chapter 1_ Prompt Chaining.md",
     "C",
     "raw/articles/llm/skills/ecc/未命名",
     "raw/articles/llm/skills/ecc",
-    "raw/articles/llm/skills/anthropics",
     "raw/articles/arthas/images/3.mcp执行结果.png",
     "raw/articles/arthas/images/2.mcp.png",
     "raw/articles/arthas/images/1.ui.png",
