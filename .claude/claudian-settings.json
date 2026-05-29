@@ -39,7 +39,7 @@
     ]
   },
   "permissionMode": "yolo",
-  "model": "claude-sonnet-4-6",
+  "model": "qwen3.6-plus",
   "thinkingBudget": "off",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
@@ -54,7 +54,7 @@
     "~/Downloads"
   ],
   "persistentExternalContextPaths": [],
-  "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-Gj7XGwc1zmqWCpSObruYAWH0I0Gk0TlGUxF3liFeDGh8kKGx\nANTHROPIC_BASE_URL=https://www.fucheers.top\nANTHROPIC_MODEL=claude-sonnet-4-6\nmax_tokens=32768",
+  "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-sp-0c1d8c21f313401fb275393c75ac14ce\nANTHROPIC_BASE_URL=https=//coding.dashscope.aliyuncs.com/apps/anthropic\nANTHROPIC_DEFAULT_HAIKU_MODEL=qwen3.5-plus\nANTHROPIC_DEFAULT_OPUS_MODEL=qwen3.6-plus\nANTHROPIC_DEFAULT_SONNET_MODEL=qwen3.5-plus\nANTHROPIC_MODEL=glm-4.7\nmax_tokens=32768",
   "envSnippets": [],
   "customContextLimits": {},
   "keyboardNavigation": {
@@ -65,12 +65,13 @@
   "locale": "en",
   "claudeCliPath": "",
   "claudeCliPathsByHost": {
-    "DESKTOP-4ERJCJK": "D:\\npm\\prefix\\node_modules\\@anthropic-ai\\claude-code\\cli.js"
+    "DESKTOP-4ERJCJK": "D:\\npm\\prefix\\node_modules\\@anthropic-ai\\claude-code\\cli.js",
+    "fk": "/home/fk/.nvm/versions/node/v22.16.0/bin/claude"
   },
   "loadUserClaudeSettings": true,
   "lastClaudeModel": "haiku",
-  "lastCustomModel": "",
-  "lastEnvHash": "ANTHROPIC_BASE_URL=https://www.fucheers.top|ANTHROPIC_MODEL=claude-sonnet-4-6",
+  "lastCustomModel": "qwen3.6-plus",
+  "lastEnvHash": "ANTHROPIC_BASE_URL=https=//coding.dashscope.aliyuncs.com/apps/anthropic|ANTHROPIC_DEFAULT_HAIKU_MODEL=qwen3.5-plus|ANTHROPIC_DEFAULT_OPUS_MODEL=qwen3.6-plus|ANTHROPIC_DEFAULT_SONNET_MODEL=qwen3.5-plus|ANTHROPIC_MODEL=glm-4.7",
   "maxTabs": 3,
   "tabBarPosition": "input",
   "enableAutoScroll": true,

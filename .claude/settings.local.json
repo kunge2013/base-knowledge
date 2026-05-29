@@ -20,7 +20,9 @@
       "Bash(done:*)",
       "Skill(skill-creator)",
       "Bash(python3:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(claude mcp *)",
+      "WebFetch(domain:lobehub.com)"
     ]
   }
 }
