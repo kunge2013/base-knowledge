@@ -223,5 +223,5 @@ Step 4: 逐页替换样式    → 按 audit 报告的优先级修复
 
 ## 参考
 
-- 原始来源：[[raw/articles/llm/skills/ecc/1.design-system.md|1.design-system]]
+- 原始来源：[[1.design-system|1]]
 - 相关技能：[[concepts/ecc-skill-index|ECC 技能索引]]（待创建）

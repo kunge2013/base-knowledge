@@ -8,45 +8,45 @@ Models 是 LangChain 中 LLM 聊天模型的抽象层，提供统一接口给所
 
 ## 文件说明
 
-| 文件 | 说明 | 主题 |
-|------|------|------|
-| `llm_config.py` | LLM 配置模板，所有示例共享此配置 | 基础配置 |
-| `01_basic_initialization.py` | 使用 `init_chat_model` 基本初始化 | 初始化 |
-| `02_model_parameters.py` | 配置模型参数 | 参数配置 |
-| `03_invoke_single.py` | 单消息调用 | 调用方式 |
-| `04_invoke_conversation_dict.py` | 字典格式对话历史调用 | 对话历史 |
-| `05_invoke_conversation_objects.py` | 消息对象格式对话历史调用 | 对话历史 |
-| `06_streaming_basic.py` | 基础流式输出 | 流式输出 |
-| `07_streaming_accumulate.py` | 累积流式片段 | 流式输出 |
-| `08_astream_events.py` | 异步事件流式输出 | 流式输出 |
-| `09_batch_basic.py` | 批量并行处理多个请求 | 批量处理 |
-| `10_batch_max_concurrency.py` | 批量处理控制最大并发 | 批量处理 |
-| `11_batch_as_completed.py` | 流式输出批量结果 | 批量处理 |
-| `12_tool_calling_basic.py` | 基础工具调用 | 工具调用 |
-| `13_tool_calling_loop.py` | 手动工具调用执行循环 | 工具调用 |
-| `14_parallel_tool_calls.py` | 多工具并行调用 | 工具调用 |
-| `15_disable_parallel_tool_calls.py` | 禁用并行工具调用 | 工具调用 |
-| `16_streaming_tool_calls.py` | 流式工具调用 | 工具调用 |
-| `17_accumulate_tool_calls.py` | 累积流式工具调用片段 | 工具调用 |
-| `18_force_tool_choice.py` | 强制选择工具 | 工具调用 |
-| `19_structured_output_pydantic.py` | Pydantic 结构化输出 | 结构化输出 |
-| `20_structured_output_include_raw.py` | 包含原始消息的结构化输出 | 结构化输出 |
-| `21_structured_output_nested.py` | 嵌套模式结构化输出 | 结构化输出 |
-| `22_model_profile.py` | 获取模型能力配置 | 模型配置 |
-| `23_custom_model_profile.py` | 自定义模型能力配置 | 模型配置 |
-| `24_update_model_profile.py` | 更新现有模型配置 | 模型配置 |
-| `25_multimodal_output.py` | 多模态输出（图像） | 多模态 |
-| `26_reasoning_blocks.py` | 获取推理步骤内容块 | 推理 |
-| `27_server_side_tool_use.py` | 服务端工具执行 | 工具调用 |
-| `28_rate_limiting.py` | 客户端限流 | 高级配置 |
-| `29_custom_base_url.py` | 自定义 API 基础 URL | 高级配置 |
-| `30_http_proxy.py` | HTTP 代理配置 | 高级配置 |
-| `31_log_probs.py` | 获取 token 对数概率 | 高级配置 |
-| `32_token_usage_callback.py` | 聚合 token 使用统计 | 监控 |
-| `33_invocation_config.py` | 自定义调用配置 | 调用配置 |
-| `34_configurable_model.py` | 运行时可配置模型 | 动态配置 |
-| `35_configurable_multiple.py` | 多参数可配置模型 | 动态配置 |
-| `36_configurable_tool_calling.py` | 可配置模型工具调用 | 动态配置 |
+| 文件                                    | 说明                         | 主题    |
+| ------------------------------------- | -------------------------- | ----- |
+| `llm_config.py`                       | LLM 配置模板，所有示例共享此配置         | 基础配置  |
+| `01_basic_initialization.py`          | 使用 `init_chat_model` 基本初始化 | 初始化   |
+| `02_model_parameters.py`              | 配置模型参数                     | 参数配置  |
+| `03_invoke_single.py`                 | 单消息调用                      | 调用方式  |
+| `04_invoke_conversation_dict.py`      | 字典格式对话历史调用                 | 对话历史  |
+| `05_invoke_conversation_objects.py`   | 消息对象格式对话历史调用               | 对话历史  |
+| `06_streaming_basic.py`               | 基础流式输出                     | 流式输出  |
+| `07_streaming_accumulate.py`          | 累积流式片段                     | 流式输出  |
+| `08_astream_events.py`                | 异步事件流式输出                   | 流式输出  |
+| `09_batch_basic.py`                   | 批量并行处理多个请求                 | 批量处理  |
+| `10_batch_max_concurrency.py`         | 批量处理控制最大并发                 | 批量处理  |
+| `11_batch_as_completed.py`            | 流式输出批量结果                   | 批量处理  |
+| `12_tool_calling_basic.py`            | 基础工具调用                     | 工具调用  |
+| `13_tool_calling_loop.py`             | 手动工具调用执行循环                 | 工具调用  |
+| `14_parallel_tool_calls.py`           | 多工具并行调用                    | 工具调用  |
+| `15_disable_parallel_tool_calls.py`   | 禁用并行工具调用                   | 工具调用  |
+| `16_streaming_tool_calls.py`          | 流式工具调用                     | 工具调用  |
+| `17_accumulate_tool_calls.py`         | 累积流式工具调用片段                 | 工具调用  |
+| `18_force_tool_choice.py`             | 强制选择工具                     | 工具调用  |
+| `19_structured_output_pydantic.py`    | Pydantic 结构化输出             | 结构化输出 |
+| `20_structured_output_include_raw.py` | 包含原始消息的结构化输出               | 结构化输出 |
+| `21_structured_output_nested.py`      | 嵌套模式结构化输出                  | 结构化输出 |
+| `22_model_profile.py`                 | 获取模型能力配置                   | 模型配置  |
+| `23_custom_model_profile.py`          | 自定义模型能力配置                  | 模型配置  |
+| `24_update_model_profile.py`          | 更新现有模型配置                   | 模型配置  |
+| `25_multimodal_output.py`             | 多模态输出（图像）                  | 多模态   |
+| `26_reasoning_blocks.py`              | 获取推理步骤内容块                  | 推理    |
+| `27_server_side_tool_use.py`          | 服务端工具执行                    | 工具调用  |
+| `28_rate_limiting.py`                 | 客户端限流                      | 高级配置  |
+| `29_custom_base_url.py`               | 自定义 API 基础 URL             | 高级配置  |
+| `30_http_proxy.py`                    | HTTP 代理配置                  | 高级配置  |
+| `31_log_probs.py`                     | 获取 token 对数概率              | 高级配置  |
+| `32_token_usage_callback.py`          | 聚合 token 使用统计              | 监控    |
+| `33_invocation_config.py`             | 自定义调用配置                    | 调用配置  |
+| `34_configurable_model.py`            | 运行时可配置模型                   | 动态配置  |
+| `35_configurable_multiple.py`         | 多参数可配置模型                   | 动态配置  |
+| `36_configurable_tool_calling.py`     | 可配置模型工具调用                  | 动态配置  |
 
 ## 核心功能
 
