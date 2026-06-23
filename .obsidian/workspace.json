@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md",
+                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/10. openspec总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "openspec总结"
+              "title": "10. openspec总结"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md",
+                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/10. openspec总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "openspec总结 的反向链接列表"
+              "title": "10. openspec总结 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md",
+                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/10. openspec总结.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "openspec总结 的出链列表"
+              "title": "10. openspec总结 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md",
+                "file": "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/10. openspec总结.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "openspec总结 的大纲"
+              "title": "10. openspec总结 的大纲"
             }
           },
           {
@@ -195,14 +195,14 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "d067dae61fe7209c",
+  "active": "d0484f7b458c4593",
   "lastOpenFiles": [
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/1.OpenSpec最佳实践.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/10. openspec总结.md",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md.tmp.12775.1782221295323",
     "raw/articles/tools/CLAUDE CODE/openspec/5. OpenSpec 与 SpecKit：AI 时代的规范驱动开发新实践.md",
-    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/openspec总结.md.tmp.11881.1782221066637",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/01-简介.md",
-    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/1.OpenSpec最佳实践.md",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/06-验证与常见错误.md",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/03-项目初始化.md",
     "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/07-常用命令参考.md",
