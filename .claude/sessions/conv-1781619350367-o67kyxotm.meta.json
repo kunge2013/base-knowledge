@@ -1,0 +1,20 @@
+{
+  "id": "conv-1781619350367-o67kyxotm",
+  "title": "Greet and start conversation",
+  "titleGenerationStatus": "success",
+  "createdAt": 1781619350368,
+  "updatedAt": 1781619362581,
+  "lastResponseAt": 1781619353608,
+  "sessionId": "ae243dd4-cff7-427e-93ff-267d79f4bb8d",
+  "sdkSessionId": "ae243dd4-cff7-427e-93ff-267d79f4bb8d",
+  "currentNote": "raw/articles/tools/CLAUDE CODE/openspec/5. OpenSpec 与 SpecKit：AI 时代的规范驱动开发新实践.md",
+  "usage": {
+    "model": "qwen3.6-plus",
+    "inputTokens": 33409,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 33409,
+    "percentage": 17
+  }
+}
