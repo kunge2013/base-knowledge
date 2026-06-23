@@ -11,10 +11,14 @@
             "id": "1b395e4b916ebcf9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "raw/articles/index 带学习内容.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "index 带学习内容"
             }
           }
         ]
@@ -152,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "wiki/index.md",
+                "file": "raw/articles/index 带学习内容.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "index 带学习内容 的大纲"
             }
           },
           {
@@ -176,8 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 570.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,54 +195,54 @@
       "claudian:Open Claudian": false
     }
   },
-  "active": "d0fa7fecc6d2c9ea",
+  "active": "1b395e4b916ebcf9",
   "lastOpenFiles": [
-    "raw/articles/tools/CLAUDE CODE/openspec/openspec使用.md",
-    "raw/articles/tools/CLAUDE CODE/openspec/3.OpenSpec 实战指南：AI 辅助软件工程全流程深度复盘.md",
-    "raw/articles/tools/CLAUDE CODE/openspec/2.OpenSpec 实战指南.md",
-    "raw/articles/tools/CLAUDE CODE/openspec/1.OpenSepc 使用手册.md",
-    "raw/articles/tools/CLAUDE CODE/openspec",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/1.claude-code-hooks.md",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/1.claude-code-hooks.md",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach/claude-code-hooks-flow.svg",
-    "attach/claude-code-hooks-cover.svg.md",
-    "attach",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach/claude-code-hooks-cover.svg",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/1. CLI 参考.md",
-    "raw/articles/tools/CLAUDE CODE/claude code 高级指南",
-    "raw/articles/tools/CLAUDE CODE/未命名.canvas",
-    "raw/articles/tools/CLAUDE CODE/README.md",
-    "raw/articles/llm/llm-wiki.md",
-    "raw/articles/llm/Karpathy's LLM Wiki The Complete Guide to His Idea File.md",
-    "raw/articles/llm/skills/ecc/1.design-system_CN.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/1.OpenSpec最佳实践.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/03-项目初始化.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/01-简介.md",
+    "raw/articles/index 带学习内容.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/1.什么是 Claude Skills：模块化的专业能力扩展  Claude 技术指南.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/3.使用内置 Skills.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/2.Skills 的结构与组成.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/7. 本章小结：打造你的 AI 专家团队.md",
     "raw/articles/llm/skills/ecc/1.design-system.md",
-    "coding/langchain/Chapter_5_Tools/Chapter_5_Tools_SUMMARY.md",
-    "coding/langchain/Chapter_5_Tools/README.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/9. Channels 参考.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/8. Plugins 参考.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/7. Hooks 参考.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/6. checkpointing.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/5. 交互模式.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/4. 工具参考.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/3. 环境变量.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/2 .命令.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli/10. 术语表.md",
-    "raw/articles/tools/CLAUDE CODE/claude code cli",
-    "raw/articles/tools/CLAUDE CODE",
-    "raw/articles/tools",
-    "coding/langchain/Streaming/Chapter_Streaming_SUMMARY.md",
-    "raw/articles/arthas/1. arthas接入.md",
-    "C",
-    "raw/articles/llm/skills/ecc/未命名",
-    "raw/articles/llm/skills/ecc",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/6. 调试与优化 Skills.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/5.Skills 组合与高级用法.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/4. 创建自定义 Skills.md",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide/z.index.md",
+    "raw/articles/llm/skills/1.SKILL 规范/1.SKILL设计规范资料.md",
+    "claude_guide/di-san-bu-fen-jin-jie-pian/06_skills/6.5_combination.md",
+    "claude_guide/di-san-bu-fen-jin-jie-pian/06_skills",
+    "claude_guide/di-san-bu-fen-jin-jie-pian",
+    "claude_guide",
+    "Pasted image 20260623133817.png",
+    "raw/articles/llm/skills/1.SKILL 规范/2.claude_guide",
+    "raw/articles/llm/skills/1.SKILL 规范/claude_guide",
+    "raw/articles/llm/Karpathy's LLM Wiki The Complete Guide to His Idea File.md",
+    "raw/articles/llm/skills/1.SKILL 规范",
+    "raw/articles/tools/tmux/1.tmux-guide.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/08-最佳实践.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/05-文档结构规范.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/05-document-structure.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/ForceInjectionOpenSpec-practise OpenSpec Practical Guide.md.tmp.28824.1782190103717",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/ForceInjectionOpenSpec-practise OpenSpec Practical Guide.md.tmp.28824.1782190088594",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/09-附录.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/07-常用命令参考.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/06-验证与常见错误.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/04-创建变更提案.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/02-安装.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/09-appendix.md",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters/05-document-structure.md.tmp.28824.1782189803794",
+    "raw/articles/tools/OpenSpec/1.OpenSpec最佳实践/chapters",
+    "raw/articles/tools/tmux/attach/12054114.png",
+    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach/claude-code-hooks-flow.svg",
+    "raw/articles/tools/CLAUDE CODE/claude code 高级指南/attach/claude-code-hooks-cover.svg",
+    "raw/articles/tools/CLAUDE CODE/未命名.canvas",
     "raw/articles/arthas/images/3.mcp执行结果.png",
     "raw/articles/arthas/images/2.mcp.png",
     "raw/articles/arthas/images/1.ui.png",
     "raw/assets/book/agentic-design-patterns/images/chapter-12/image2.png",
     "raw/assets/book/agentic-design-patterns/images/chapter-9/image4.png",
-    "raw/assets/book/agentic-design-patterns/images/chapter-9/image3.png",
-    "raw/assets/book/agentic-design-patterns/images/chapter-9/image2.png",
-    "raw/assets/book/agentic-design-patterns/images/chapter-9/image1.png"
+    "raw/assets/book/agentic-design-patterns/images/chapter-9/image3.png"
   ]
 }

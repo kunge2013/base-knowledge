@@ -1,0 +1,4 @@
+- 1. [claude code 源码PYTHON实现](https://github.com/shareAI-lab/learn-claude-code)
+- 2. [claude code 源码](https://github.com/claude-code-best/claude-code.git)
+- 3. [SKILL规范](https://yeasy.gitbook.io/claude_guide/di-san-bu-fen-jin-jie-pian/06_skills/6.1_intro) 对应的模拟器官网 [shareai ai模拟器](https://learn.shareai.run/zh/s07/)
+- 
