@@ -58,7 +58,7 @@ The knowledge is already synthesized and interlinked - it compounds over time.
 
 ## Structure
 
-- [[index|Index]] - complete catalog of all pages
+- [[wiki/index|Index]] - complete catalog of all pages
 - [[log|Log]] - chronological change log
 - [sources/](sources/) - summaries of raw sources
 - [concepts/](concepts/) - concept and topic pages
