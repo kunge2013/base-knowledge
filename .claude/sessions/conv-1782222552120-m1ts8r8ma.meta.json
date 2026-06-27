@@ -1,0 +1,19 @@
+{
+  "id": "conv-1782222552120-m1ts8r8ma",
+  "title": "Summarize LLM Skills documentation and create k...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1782222552121,
+  "updatedAt": 1782222956583,
+  "lastResponseAt": 1782222956583,
+  "sessionId": "f9dd1df8-c306-4026-b62c-0865328f230a",
+  "sdkSessionId": "f9dd1df8-c306-4026-b62c-0865328f230a",
+  "usage": {
+    "model": "qwen3.6-plus",
+    "inputTokens": 38353,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 38353,
+    "percentage": 19
+  }
+}
