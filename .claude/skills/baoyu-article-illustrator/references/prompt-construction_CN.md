@@ -1,145 +1,145 @@
-# Prompt Construction
+# 提示词构建
 
-## Prompt File Format
+## 提示词文件格式
 
-Each prompt file uses YAML frontmatter + content:
+每个提示词文件使用 YAML 前置元数据 + 内容：
 
 ```yaml
 ---
 illustration_id: 01
 type: infographic
 style: blueprint
-references:                    # ⚠️ ONLY if files EXIST in references/ directory
+references:                    # ⚠️ 仅在文件确实存在于 references/ 目录时
   - ref_id: 01
     filename: 01-ref-diagram.png
     usage: direct              # direct | style | palette
 ---
 
-[Type-specific template content below...]
+[下方为类型特定模板内容...]
 ```
 
-**⚠️ CRITICAL - When to include `references` field**:
+**⚠️ 关键 - 何时包含 `references` 字段**：
 
-| Situation | Action |
-|-----------|--------|
-| Reference file saved to `references/` | Include in frontmatter ✓ |
-| Style extracted verbally (no file) | DO NOT include in frontmatter, append to prompt body instead |
-| File path in frontmatter but file doesn't exist | ERROR - remove references field |
+| 情况 | 操作 |
+|------|------|
+| 参考文件已保存到 `references/` | 包含在前置元数据中 ✓ |
+| 风格口头提取（无文件） | 不要包含在前置元数据中，改为追加到提示词正文 |
+| 前置元数据中有文件路径但文件不存在 | 错误 - 移除 references 字段 |
 
-**Reference Usage Types** (only when file exists):
+**参考使用类型**（仅当文件存在时）：
 
-| Usage | Description | Generation Action |
-|-------|-------------|-------------------|
-| `direct` | Primary visual reference | Pass to `--ref` parameter |
-| `style` | Style characteristics only | Describe style in prompt text |
-| `palette` | Color palette extraction | Include colors in prompt |
+| 使用方式 | 描述 | 生成操作 |
+|----------|------|----------|
+| `direct` | 主要视觉参考 | 传递到 `--ref` 参数 |
+| `style` | 仅风格特征 | 在提示词文本中描述风格 |
+| `palette` | 提取调色板 | 在提示词中包含颜色 |
 
-**If no reference file but style/palette extracted verbally**, append directly to prompt body:
+**如果没有参考文件但口头提取了风格/调色板**，直接追加到提示词正文：
 ```
-COLORS (from reference):
-- Primary: #E8756D coral
-- Secondary: #7ECFC0 mint
+COLORS（来自参考）：
+- 主色：#E8756D 珊瑚色
+- 辅色：#7ECFC0 薄荷色
 ...
 
-STYLE (from reference):
-- Clean lines, minimal shadows
-- Gradient backgrounds
+STYLE（来自参考）：
+- 干净线条，极少阴影
+- 渐变背景
 ...
 ```
 
 ---
 
-## Default Composition Requirements
+## 默认构图要求
 
-**Apply to ALL prompts by default**:
+**默认应用于所有提示词**：
 
-| Requirement | Description |
-|-------------|-------------|
-| **Clean composition** | Simple layouts, no visual clutter |
-| **White space** | Generous margins, breathing room around elements |
-| **No complex backgrounds** | Solid colors or subtle gradients only, avoid busy textures |
-| **Centered or content-appropriate** | Main visual elements centered or positioned by content needs |
-| **Matching graphics** | Use graphic elements that align with content theme |
-| **Highlight core info** | White space draws attention to key information |
+| 要求 | 描述 |
+|------|------|
+| **干净构图** | 简洁布局，无视觉杂乱 |
+| **留白** | 元素周围慷慨的留白和呼吸空间 |
+| **无复杂背景** | 仅纯色或微妙渐变，避免繁忙纹理 |
+| **居中或内容适配** | 主视觉元素居中或按内容需求定位 |
+| **匹配图形** | 使用与内容主题一致的图形元素 |
+| **突出核心信息** | 留白将注意力引向关键信息 |
 
-**Add to ALL prompts**:
+**添加到所有提示词**：
 > Clean composition with generous white space. Simple or no background. Main elements centered or positioned by content needs.
 
 ---
 
-## Color Specification Rules
+## 颜色规格规则
 
-Colors in prompts use hex codes for **rendering guidance only** — they tell the model which colors to use, NOT what text to display.
+提示词中的颜色使用十六进制代码仅作为**渲染指导** — 它们告诉模型使用哪些颜色，而非显示什么文字。
 
-**⚠️ CRITICAL**: Image generation models sometimes render color names and hex values as visible text labels in the image (e.g., painting "Macaron Blue #A8D8EA" as a label). This must be prevented.
+**⚠️ 关键**：图像生成模型有时会将颜色名称和十六进制值渲染为图像中的可见文字标签（例如绘制 "Macaron Blue #A8D8EA" 作为标签）。必须防止这种情况。
 
-**Add to ALL prompts that contain a COLORS section**:
+**添加到所有包含 COLORS 章节的提示词**：
 > Color values (#hex) and color names are rendering guidance only — do NOT display color names, hex codes, or palette labels as visible text in the image.
 
 ---
 
-## Character Rendering
+## 角色渲染
 
-When depicting people:
+描绘人物时：
 
-| Guideline | Description |
-|-----------|-------------|
-| **Style** | Simplified cartoon silhouettes or symbolic expressions |
-| **Avoid** | Realistic human portrayals, detailed faces |
-| **Diversity** | Varied body types when showing multiple people |
-| **Emotion** | Express through posture and simple gestures |
+| 指南 | 描述 |
+|------|------|
+| **风格** | 简化的卡通剪影或象征性表达 |
+| **避免** | 写实人物、详细面部 |
+| **多样性** | 展示多人时体型多样 |
+| **情感** | 通过姿态和简单手势表达 |
 
-**Add to ALL prompts with human figures**:
+**添加到所有含人物形象的提示词**：
 > Human figures: simplified stylized silhouettes or symbolic representations, not photorealistic.
 
 ---
 
-## Text in Illustrations
+## 插图中的文字
 
-| Element | Guideline |
-|---------|-----------|
-| **Size** | Large, prominent, immediately readable |
-| **Style** | Handwritten fonts preferred for warmth |
-| **Content** | Concise keywords and core concepts only |
-| **Language** | Match article language |
+| 元素 | 指南 |
+|------|------|
+| **大小** | 大号、突出、一目了然 |
+| **风格** | 首选手写字体增加温暖感 |
+| **内容** | 仅简洁关键词和核心概念 |
+| **语言** | 匹配文章语言 |
 
-**Add to prompts with text**:
+**添加到含文字的提示词**：
 > Text should be large and prominent with handwritten-style fonts. Keep minimal, focus on keywords.
 
 ---
 
-## Principles
+## 原则
 
-Good prompts must include:
+好的提示词必须包含：
 
-1. **Layout Structure First**: Describe composition, zones, flow direction
-2. **Specific Data/Labels**: Use actual numbers, terms from article
-3. **Visual Relationships**: How elements connect
-4. **Semantic Colors**: Meaning-based color choices (red=warning, green=efficient)
-5. **Style Characteristics**: Line treatment, texture, mood
-6. **Aspect Ratio**: End with ratio and complexity level
+1. **布局结构优先**：描述构图、区域、流动方向
+2. **具体数据/标签**：使用文章中的实际数字、术语
+3. **视觉关系**：元素如何连接
+4. **语义颜色**：基于含义的颜色选择（红=警告，绿=高效）
+5. **风格特征**：线条处理、纹理、氛围
+6. **宽高比**：以比例和复杂度级别结尾
 
-## Type-Specific Templates
+## 类型特定模板
 
-### Infographic
+### 信息图（Infographic）
 
 ```
-[Title] - Data Visualization
+[标题] - Data Visualization
 
 Layout: [grid/radial/hierarchical]
 
 ZONES:
-- Zone 1: [data point with specific values]
-- Zone 2: [comparison with metrics]
-- Zone 3: [summary/conclusion]
+- Zone 1: [具体数值的数据点]
+- Zone 2: [带指标的对比]
+- Zone 3: [总结/结论]
 
-LABELS: [specific numbers, percentages, terms from article]
-COLORS: [semantic color mapping]
-STYLE: [style characteristics]
+LABELS: [文章中的具体数字、百分比、术语]
+COLORS: [语义颜色映射]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-**Infographic + sketch-notes + macaron palette** (default / `hand-drawn-edu` preset):
+**Infographic + sketch-notes + macaron 调色板**（默认 / `hand-drawn-edu` 预设）：
 ```
 Single-page hand-drawn educational infographic in a clean presentation style.
 Warm cream paper background, black hand-drawn lines with slight wobble, soft
@@ -172,14 +172,14 @@ STYLE: Minimal, well-organized, airy. Color fills don't completely fill
        paragraphs. Generous white space between sections.
 ```
 
-**Infographic + vector-illustration**:
+**Infographic + vector-illustration**：
 ```
 Flat vector illustration infographic. Clean black outlines on all elements.
 COLORS: Cream background (#F5F0E6), Coral Red (#E07A5F), Mint Green (#81B29A), Mustard Yellow (#F2CC8F)
 ELEMENTS: Geometric simplified icons, no gradients, playful decorative elements (dots, stars)
 ```
 
-**Infographic + vector-illustration + warm palette**:
+**Infographic + vector-illustration + warm 调色板**：
 ```
 Flat vector illustration infographic. Clean black outlines on all elements.
 PALETTE OVERRIDE (warm): Warm-only color palette, no cool colors.
@@ -189,44 +189,44 @@ ELEMENTS: Geometric simplified icons, no gradients, rounded corners,
           modular card layout, consistent icon style
 ```
 
-### Scene
+### 场景（Scene）
 
 ```
-[Title] - Atmospheric Scene
+[标题] - Atmospheric Scene
 
-FOCAL POINT: [main subject]
-ATMOSPHERE: [lighting, mood, environment]
-MOOD: [emotion to convey]
+FOCAL POINT: [主体]
+ATMOSPHERE: [光线、氛围、环境]
+MOOD: [要传达的情感]
 COLOR TEMPERATURE: [warm/cool/neutral]
-STYLE: [style characteristics]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-### Flowchart
+### 流程图（Flowchart）
 
 ```
-[Title] - Process Flow
+[标题] - Process Flow
 
 Layout: [left-right/top-down/circular]
 
 STEPS:
-1. [Step name] - [brief description]
-2. [Step name] - [brief description]
+1. [步骤名] - [简述]
+2. [步骤名] - [简述]
 ...
 
-CONNECTIONS: [arrow types, decision points]
-STYLE: [style characteristics]
+CONNECTIONS: [箭头类型、决策点]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-**Flowchart + vector-illustration**:
+**Flowchart + vector-illustration**：
 ```
 Flat vector flowchart with bold arrows and geometric step containers.
 COLORS: Cream background (#F5F0E6), steps in Coral/Mint/Mustard, black outlines
 ELEMENTS: Rounded rectangles, thick arrows, simple icons per step
 ```
 
-**Flowchart + sketch-notes + macaron palette**:
+**Flowchart + sketch-notes + macaron 调色板**：
 ```
 Hand-drawn educational flowchart on warm cream paper. Slight wobble on all lines.
 PALETTE: macaron — soft pastel color blocks
@@ -237,7 +237,7 @@ ELEMENTS: Rounded cards with dashed/solid borders, wavy hand-drawn arrows with l
 STYLE: Color fills don't completely fill outlines, hand-drawn lettering, generous white space
 ```
 
-**Flowchart + ink-notes + mono-ink palette**:
+**Flowchart + ink-notes + mono-ink 调色板**：
 ```
 Professional hand-drawn visual-note flowchart on pure white. Black ink line work
 with slight wobble, à la Mike Rohde sketchnoting.
@@ -253,32 +253,32 @@ STYLE: Hand-lettered titles (bold, oversized), handwritten stage labels and
         annotations, generous white space, bottom tagline summarizing takeaway
 ```
 
-### Comparison
+### 对比（Comparison）
 
 ```
-[Title] - Comparison View
+[标题] - Comparison View
 
-LEFT SIDE - [Option A]:
-- [Point 1]
-- [Point 2]
+LEFT SIDE - [选项 A]：
+- [要点 1]
+- [要点 2]
 
-RIGHT SIDE - [Option B]:
-- [Point 1]
-- [Point 2]
+RIGHT SIDE - [选项 B]：
+- [要点 1]
+- [要点 2]
 
-DIVIDER: [visual separator]
-STYLE: [style characteristics]
+DIVIDER: [视觉分隔符]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-**Comparison + vector-illustration**:
+**Comparison + vector-illustration**：
 ```
 Flat vector comparison with split layout. Clear visual separation.
 COLORS: Left side Coral (#E07A5F), Right side Mint (#81B29A), cream background
 ELEMENTS: Bold icons, black outlines, centered divider line
 ```
 
-**Comparison + vector-illustration + warm palette**:
+**Comparison + vector-illustration + warm 调色板**：
 ```
 Flat vector comparison with split layout. Clear visual separation.
 PALETTE OVERRIDE (warm): Warm-only color palette, no cool colors.
@@ -287,7 +287,7 @@ COLORS: Left side Warm Orange (#ED8936), Right side Terracotta (#C05621),
 ELEMENTS: Bold icons, black outlines, centered divider line
 ```
 
-**Comparison + ink-notes + mono-ink palette** (Before/After, Traditional vs New):
+**Comparison + ink-notes + mono-ink 调色板**（前后对比、传统 vs 新）：
 ```
 Professional hand-drawn sketchnote comparison on pure white. Black ink line work
 with slight wobble, à la Mike Rohde sketchnoting.
@@ -309,30 +309,30 @@ STYLE: Hand-lettered headings (bold, oversized), handwritten body annotations,
         generous white space, no computer fonts, no gradients, no shadows.
 ```
 
-### Framework
+### 框架（Framework）
 
 ```
-[Title] - Conceptual Framework
+[标题] - Conceptual Framework
 
 STRUCTURE: [hierarchical/network/matrix]
 
 NODES:
-- [Concept 1] - [role]
-- [Concept 2] - [role]
+- [概念 1] - [角色]
+- [概念 2] - [角色]
 
-RELATIONSHIPS: [how nodes connect]
-STYLE: [style characteristics]
+RELATIONSHIPS: [节点如何连接]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-**Framework + vector-illustration**:
+**Framework + vector-illustration**：
 ```
 Flat vector framework diagram with geometric nodes and bold connectors.
 COLORS: Cream background (#F5F0E6), nodes in Coral/Mint/Mustard/Blue, black outlines
 ELEMENTS: Rounded rectangles or circles for nodes, thick connecting lines
 ```
 
-**Framework + vector-illustration + warm palette**:
+**Framework + vector-illustration + warm 调色板**：
 ```
 Flat vector framework diagram with geometric nodes and bold connectors.
 PALETTE OVERRIDE (warm): Warm-only color palette, no cool colors.
@@ -341,7 +341,7 @@ COLORS: Soft Peach background (#FFECD2), nodes in Warm Orange (#ED8936),
 ELEMENTS: Rounded rectangles or circles for nodes, thick connecting lines
 ```
 
-**Framework + ink-notes + mono-ink palette** (command center, OS analogy):
+**Framework + ink-notes + mono-ink 调色板**（指挥中心、操作系统类比）：
 ```
 Professional hand-drawn sketchnote framework on pure white. Black ink line work
 with slight wobble, à la Mike Rohde sketchnoting.
@@ -362,36 +362,36 @@ STYLE: Hand-lettered headings, handwritten annotations, generous white space,
         no computer fonts, no gradients.
 ```
 
-### Timeline
+### 时间线（Timeline）
 
 ```
-[Title] - Chronological View
+[标题] - Chronological View
 
 DIRECTION: [horizontal/vertical]
 
 EVENTS:
-- [Date/Period 1]: [milestone]
-- [Date/Period 2]: [milestone]
+- [日期/时期 1]：[里程碑]
+- [日期/时期 2]：[里程碑]
 
-MARKERS: [visual indicators]
-STYLE: [style characteristics]
+MARKERS: [视觉标记]
+STYLE: [风格特征]
 ASPECT: 16:9
 ```
 
-### Screen-Print Style Override
+### Screen-Print 风格覆盖
 
-When `style: screen-print`, replace standard style instructions with:
+当 `style: screen-print` 时，用以下内容替换标准风格指令：
 
 ```
 Screen print / silkscreen poster art. Flat color blocks, NO gradients.
-COLORS: 2-5 colors maximum. [Choose from style palette or duotone pair]
+COLORS: 2-5 colors maximum. [从风格调色板或双色调配对中选择]
 TEXTURE: Halftone dot patterns, slight color layer misregistration, paper grain
 COMPOSITION: Bold silhouettes, geometric framing, negative space as storytelling element
 FIGURES: Silhouettes only, no detailed faces, stencil-cut edges
 TYPOGRAPHY: Bold condensed sans-serif integrated into composition (not overlaid)
 ```
 
-**Scene + screen-print**:
+**Scene + screen-print**：
 ```
 Conceptual poster scene. Single symbolic focal point, NOT literal illustration.
 COLORS: Duotone pair (e.g., Burnt Orange #E8751A + Deep Teal #0A6E6E) on Off-Black #121212
@@ -399,7 +399,7 @@ COMPOSITION: Centered silhouette or geometric frame, 60%+ negative space
 TEXTURE: Halftone dots, paper grain, slight print misregistration
 ```
 
-**Comparison + screen-print**:
+**Comparison + screen-print**：
 ```
 Split poster composition. Each side dominated by one color from duotone pair.
 LEFT: [Color A] side with silhouette/icon for [Option A]
@@ -410,17 +410,17 @@ TEXTURE: Halftone transitions between sides
 
 ---
 
-## Palette Override
+## 调色板覆盖
 
-When a palette is specified (via `--palette` or preset), it overrides the style's default colors:
+当指定了调色板（通过 `--palette` 或预设）时，它覆盖风格的默认颜色：
 
-1. Read style file → get rendering rules (Visual Elements, Style Rules, line treatment)
-2. Read palette file (`palettes/<palette>.md`) → get Colors + Background
-3. Palette Colors **replace** style's default Color Palette in prompt
-4. Palette Background **replaces** style's Background color (keep style's texture description)
-5. Build prompt: style rendering instructions + palette colors
+1. 读取风格文件 → 获取渲染规则（视觉元素、风格规则、线条处理）
+2. 读取调色板文件（`palettes/<palette>.md`）→ 获取颜色 + 背景
+3. 调色板颜色**替换**提示词中风格的默认调色板
+4. 调色板背景**替换**风格的背景色（保留风格的纹理描述）
+5. 构建提示词：风格渲染指令 + 调色板颜色
 
-**Prompt frontmatter** includes palette when specified:
+**提示词前置元数据** 在指定调色板时包含：
 ```yaml
 ---
 illustration_id: 01
@@ -430,7 +430,7 @@ palette: macaron
 ---
 ```
 
-**Example**: `vector-illustration` + `macaron` palette:
+**示例**：`vector-illustration` + `macaron` 调色板：
 ```
 Flat vector illustration infographic. Clean black outlines on all elements.
 PALETTE: macaron — soft pastel color blocks
@@ -439,21 +439,21 @@ COLORS: Warm Cream background (#F5F0E8), Macaron Blue (#A8D8EA), Mint (#B5E5CF),
 ELEMENTS: Geometric simplified icons, no gradients, playful decorative elements
 ```
 
-When no palette is specified, use the style's built-in Color Palette as before.
+当未指定调色板时，照旧使用风格内置的调色板。
 
 ---
 
-## What to Avoid
+## 应避免的内容
 
-- Vague descriptions ("a nice image")
-- Literal metaphor illustrations
-- Missing concrete labels/annotations
-- Generic decorative elements
+- 模糊描述（"一张好看的图"）
+- 字面隐喻插图
+- 缺少具体标签/注释
+- 通用装饰元素
 
-## Watermark Integration
+## 水印集成
 
-If watermark enabled in preferences, append:
+如果偏好设置中启用了水印，追加：
 
 ```
-Include a subtle watermark "[content]" positioned at [position].
+Include a subtle watermark "[内容]" positioned at [位置].
 ```
